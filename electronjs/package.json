@@ -1,0 +1,16 @@
+{
+  "name": "electronjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "startup.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^8.5.5",
+    "file": "^0.2.2"
+  }
+}
