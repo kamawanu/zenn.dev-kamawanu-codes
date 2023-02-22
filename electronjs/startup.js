@@ -9,7 +9,9 @@ let _rootwindow;
 function startupmain() {
     _rootwindow = new BrowserWindow({
         width: 800, height: 700, webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: true,
+            contextIsolation: false,
+            worldSafeExecuteJavaScript: false
         }
     });
 
