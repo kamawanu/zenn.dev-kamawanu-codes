@@ -6,17 +6,24 @@
 </head>
 
 <body>
-
+    <div id="app">
+        {{vue3version}}
+    </div>
 </body>
 <script>
     const createApp = Vue.createApp;
-    const vue3app = createApp(
+    const _version = Vue.version;
+    console.log(_version);
+    const vue3versionapp = createApp(
         {
             data: function () {
+                vue3version: undefined
             },
             methods: {
             },
             mounted: function () {
+                this.vue3version = _version;
+                this.$forceUpdate();
             }
         }
     ).mount("#app")
