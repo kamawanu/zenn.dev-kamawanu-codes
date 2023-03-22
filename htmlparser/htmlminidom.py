@@ -22,8 +22,10 @@ class dom:
         yield from finditerxi(self.content, tag)
 
     def find(self, tag):
-        return self.finditer(tag).__next__()
-
+        try:
+          return self.finditer(tag).__next__()
+        except StopIteration:
+          return None
 
 def flatten(root: List[dom]):
     for xx in root:
@@ -51,7 +53,10 @@ class htmlminiparser(HTMLParser):
         yield from finditerxi(self.root, tag)
 
     def find(self, tag):
-        return self.finditer(tag).__next__()
+        try:
+          return self.finditer(tag).__next__()
+        except StopIteration:
+          return None
 
     def handle_starttag(self, tag, attrs):
         # breakpoint()
