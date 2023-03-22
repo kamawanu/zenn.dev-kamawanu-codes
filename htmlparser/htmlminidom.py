@@ -2,21 +2,40 @@
 
 from dataclasses import dataclass
 from html.parser import HTMLParser
-from typing import List
+from typing import List, Dict
 
 
 @dataclass
 class dom:
     tag: str
-    attrs: dict
+    attrs: Dict[str, str]
     content: List["dom"]
+
+    def __post_init__(self):
+        if not type(self.attrs) is dict:
+            self.attrs = dict(self.attrs)
+
+    def __getitem__(self, ii):
+        return self.content[ii]
+
+    def finditer(self, tag):
+        yield from finditerxi(self.content, tag)
+
+    def find(self, tag):
+        return self.finditer(tag).__next__()
 
 
 def flatten(root: List[dom]):
     for xx in root:
         yield xx
-        if isinstance(xx,dom):
+        if isinstance(xx, dom):
             yield from flatten(xx.content)
+
+
+def finditerxi(root: List[dom], tag):
+    for xx in flatten(root):
+        if isinstance(xx, dom) and xx.tag == tag:
+            yield xx
 
 
 class htmlminiparser(HTMLParser):
@@ -29,11 +48,9 @@ class htmlminiparser(HTMLParser):
         super().__init__()
 
     def finditer(self, tag):
-        for xx in flatten(self.root):
-            if isinstance(xx,dom) and xx.tag == tag:
-                yield xx
+        yield from finditerxi(self.root, tag)
 
-    def find(self,tag):
+    def find(self, tag):
         return self.finditer(tag).__next__()
 
     def handle_starttag(self, tag, attrs):
