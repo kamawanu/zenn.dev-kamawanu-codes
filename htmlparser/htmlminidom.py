@@ -15,7 +15,8 @@ class dom:
 def flatten(root: List[dom]):
     for xx in root:
         yield xx
-        yield from flatten(xx.content)
+        if isinstance(xx,dom):
+            yield from flatten(xx.content)
 
 
 class htmlminiparser(HTMLParser):
@@ -29,8 +30,11 @@ class htmlminiparser(HTMLParser):
 
     def finditer(self, tag):
         for xx in flatten(self.root):
-            if xx.tag == tag:
+            if isinstance(xx,dom) and xx.tag == tag:
                 yield xx
+
+    def find(self,tag):
+        return self.finditer(tag).__next__()
 
     def handle_starttag(self, tag, attrs):
         # breakpoint()

@@ -2,7 +2,7 @@
 
 
 from io import TextIOWrapper
-from typing import Dict, List
+from typing import Dict, List, Union
 import re
 from email.header import decode_header
 import base64
@@ -74,10 +74,10 @@ class discretemedia:
         if encoding == 'base64':
             body = base64.b64decode(body)
         elif encoding == 'quoted-printable':
-            body = codecs.decode(body.encode("iso-8859-2"), 'quoted-printable')
+            body = codecs.decode(body.encode("iso-8859-2"), 'quoted-printable').decode("utf-8")
         return body
 
-    def get(self, name) -> str | parametersets | None:
+    def get(self, name) -> Union[str,parametersets ,None]:
         return self._rawheader.get(name)
 
 
@@ -121,12 +121,16 @@ class compositemedia:
             return self.toppart
         return self.subparts[-1]
 
+    @property
+    def homeurl(self):
+        return self._snapshotlocation
+
     def gethome(self) -> discretemedia:
         # breakpoint()
         return self.subparts[self._homefileptr]
 
     @classmethod
-    def from_file(cls, fn: str | TextIOWrapper) -> "compositemedia":
+    def from_file(cls, fn: Union[str,TextIOWrapper]) -> "compositemedia":
         if isinstance(fn,str):
             fp = open(fn)
         mparts = cls()
