@@ -74,7 +74,7 @@ class discretemedia:
         if encoding == 'base64':
             body = base64.b64decode(body)
         elif encoding == 'quoted-printable':
-            body = codecs.decode(body.encode("iso-8859-2"), 'quoted-printable').decode("utf-8")
+            body = codecs.decode(body.encode("iso-8859-2"), 'quoted-printable').decode("utf-8", 'ignore')
         return body
 
     def get(self, name) -> Union[str,parametersets ,None]:
@@ -85,11 +85,13 @@ def subjectdecode(qp_subject_header: str) -> str:
     decoded_tuple = decode_header(qp_subject_header)
     decoded_str = ''
 
+    fbcode = tuple(set([ x[1] for x in decoded_tuple if x[1] is not None  ]))
+
     for decoded_part in decoded_tuple:
-        if decoded_part[1] is None:
+        if type(decoded_part[0]) == str:
             decoded_str += decoded_part[0]
         else:
-            decoded_str += decoded_part[0].decode(decoded_part[1])
+            decoded_str += decoded_part[0].decode(decoded_part[1] or fbcode[0],"ignore" )
     return decoded_str
 
 
