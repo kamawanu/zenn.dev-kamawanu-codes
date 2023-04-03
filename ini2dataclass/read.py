@@ -7,6 +7,8 @@ class Database:
     username:str
     password:str
     database:str
+    def __post_init__(self):
+        self.port = int(self.port)
 
 import configparser
 
