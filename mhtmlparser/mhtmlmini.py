@@ -88,10 +88,10 @@ def subjectdecode(qp_subject_header: str) -> str:
     fbcode = tuple(set([ x[1] for x in decoded_tuple if x[1] is not None  ]))
 
     for decoded_part in decoded_tuple:
-        if type(decoded_part[0]) == str:
-            decoded_str += decoded_part[0]
+        if decoded_part[1] is None:
+            decoded_str += decoded_part[0].encode(fbcode)
         else:
-            decoded_str += decoded_part[0].decode(decoded_part[1] or fbcode[0],"ignore" )
+            decoded_str += decoded_part[0].decode(decoded_part[1],"ignore" )
     return decoded_str
 
 
