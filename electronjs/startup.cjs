@@ -1,6 +1,5 @@
 const { app, BrowserWindow, Menu, ipcMain } = require("electron");
 const path = require("path");
-const file = require("file");
 const fs = require("fs");
 const url = require("url");
 
