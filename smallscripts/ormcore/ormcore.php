@@ -1,6 +1,6 @@
 <?php
 
-class tinyorm {
+class ormcore {
 
     protected $_before;
     protected $_after;
