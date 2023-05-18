@@ -21,7 +21,7 @@ let JENKINS_MODE = not terminal.isatty(stdin) or not terminal.isatty(stdout)
 ###let mypid = posix.getpid()
 
 {.passL: "-static".}
-##{.passC:"-d:release"}
+{.passC:"-d:release"}
 ##{.passC:"-opt:size"}
 
 proc writefl(f: File, a: varargs[string, `$`]) =
@@ -34,7 +34,7 @@ type
         name: string
 
 type
-    suspendException = object of Exception
+    suspendException = object of CatchableError
 
 proc raiser(a: cint) {.noconv.} =
     raise newException(suspendException, "message")
@@ -95,14 +95,17 @@ proc safecopy1file(srcname: string, dst: nametuple) =
 
     except OSError:
         let exc: ref OSError = cast[ref OSError](getCurrentException())
-        case exc.errorCode
-        of posix.ENAMETOOLONG:
-            echo "<" & exc.msg & ">"
-        of posix.ENOSPC:
-            raise
+        when defined(linux):
+            case exc.errorCode
+                of posix.ENAMETOOLONG:
+                    echo "<" & exc.msg & ">"
+                of posix.ENOSPC:
+                    raise
+                else:
+                    echo repr(exc)
+                    raise
         else:
             echo repr(exc)
-            raise
 
     stdout.writefl ", "
     if JENKINS_MODE:
