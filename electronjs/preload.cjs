@@ -7,7 +7,7 @@ process.once('loaded', () => {
 contextBridge.exposeInMainWorld(
     'safeipc',
     {
-        on: (s, f) => ipcRenderer.on(s, f),
-        send: (s, f) => ipcRenderer.send(s, f)
+        on: (s, f) => ipcRenderer.on("file:"+s, f),
+        send: (s, f) => ipcRenderer.send("open:"+s, f)
     }
 )
