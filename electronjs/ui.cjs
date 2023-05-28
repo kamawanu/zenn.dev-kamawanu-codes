@@ -1,15 +1,15 @@
 ///const electron = require("electron");
-const ipcRenderer = window.safeipc;
+///const window.safeipc = window.safeipc;
 let button = document.querySelector("input#open");
 button.addEventListener("click", opensenddir);
 
-ipcRenderer.on("file:add", fileadd);
-ipcRenderer.on("file:clear", fileclear);
+window.safeipc.on("file:add", fileadd);
+window.safeipc.on("file:clear", fileclear);
 
 function opensenddir(e) {
     let odir = document.querySelector("input#directory").value;
     console.log(odir);
-    ipcRenderer.send("open:dir", odir);
+    window.safeipc.send("open:dir", odir);
 }
 function fileadd(e, n) {
     //console.log(e);

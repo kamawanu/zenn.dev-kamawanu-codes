@@ -8,9 +8,10 @@ let _rootwindow;
 function startupmain() {
     _rootwindow = new BrowserWindow({
         width: 800, height: 700, webPreferences: {
-            nodeIntegration: true,
-            contextIsolation: false,
-            worldSafeExecuteJavaScript: false
+            nodeIntegration: false,
+            contextIsolation: true,
+            worldSafeExecuteJavaScript: false,
+            preload: path.join(__dirname, '/preload.cjs'),
         }
     });
 
