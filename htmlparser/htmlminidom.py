@@ -60,8 +60,9 @@ class htmlminiparser(HTMLParser):
             return None
 
     def handle_starttag(self, tag, attrs):
-        if len(self._nest) > 2 and self._nest[-2][-1].tag in ("meta", "link", "img"):
-            self._nest.pop()
+        if tag in ("meta","link","img"):
+            if len(self._nest) > 2 and self._nest[-2][-1].tag in ("meta", "link", "img"):
+                self._nest.pop()
         # breakpoint()
         self._nest[-1].append(dom(tag, attrs, list()))
         self._nest.append(self._nest[-1][-1].content)
