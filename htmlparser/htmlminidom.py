@@ -23,9 +23,10 @@ class dom:
 
     def find(self, tag):
         try:
-          return self.finditer(tag).__next__()
+            return self.finditer(tag).__next__()
         except StopIteration:
-          return None
+            return None
+
 
 def flatten(root: List[dom]):
     for xx in root:
@@ -54,18 +55,21 @@ class htmlminiparser(HTMLParser):
 
     def find(self, tag):
         try:
-          return self.finditer(tag).__next__()
+            return self.finditer(tag).__next__()
         except StopIteration:
-          return None
+            return None
 
     def handle_starttag(self, tag, attrs):
+        if len(self._nest) > 2 and self._nest[-2][-1].tag in ("meta", "link", "img"):
+            self._nest.pop()
         # breakpoint()
         self._nest[-1].append(dom(tag, attrs, list()))
         self._nest.append(self._nest[-1][-1].content)
 
     def handle_endtag(self, tag):
-        # assert tag == self._nest[-1][-1].tag
-        # breakpoint()
+        while tag != self._nest[-2][-1].tag:
+            self._nest.pop()
+        assert tag == self._nest[-2][-1].tag
         self._nest.pop()
 
     def handle_data(self, data):
