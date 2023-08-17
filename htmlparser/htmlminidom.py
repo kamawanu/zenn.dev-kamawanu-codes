@@ -5,8 +5,22 @@ from html.parser import HTMLParser
 from typing import List, Dict
 
 
+class finditeruser:
+    def find(self, tag):
+        try:
+            return self.finditer(tag).__next__()
+        except StopIteration:
+            return None
+
+    def findmust(self,tag):
+        try:
+            return self.finditer(tag).__next__()
+        except StopIteration:
+            raise TypeError(f"{self}.{tag} not found")
+
+
 @dataclass
-class dom:
+class dom(finditeruser):
     tag: str
     attrs: Dict[str, str]
     content: List["dom"]
@@ -20,12 +34,6 @@ class dom:
 
     def finditer(self, tag):
         yield from finditerxi(self.content, tag)
-
-    def find(self, tag):
-        try:
-            return self.finditer(tag).__next__()
-        except StopIteration:
-            return None
 
 
 def flatten(root: List[dom]):
@@ -41,7 +49,7 @@ def finditerxi(root: List[dom], tag):
             yield xx
 
 
-class htmlminiparser(HTMLParser):
+class htmlminiparser(HTMLParser,finditeruser):
     root: List[dom] = None
     _nest: List[List[dom]] = None
 
@@ -52,12 +60,6 @@ class htmlminiparser(HTMLParser):
 
     def finditer(self, tag):
         yield from finditerxi(self.root, tag)
-
-    def find(self, tag):
-        try:
-            return self.finditer(tag).__next__()
-        except StopIteration:
-            return None
 
     def handle_starttag(self, tag, attrs):
         if tag in ("meta","link","img"):
