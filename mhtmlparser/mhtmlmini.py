@@ -82,16 +82,15 @@ class discretemedia:
 
 
 def subjectdecode(qp_subject_header: str) -> str:
-    decoded_tuple = decode_header(qp_subject_header)
-    decoded_str = ''
+    decoded_tuples = decode_header(qp_subject_header)
+    decoded_str = ""
 
-    fbcode = tuple(set([ x[1] for x in decoded_tuple if x[1] is not None  ]))
-
-    for decoded_part in decoded_tuple:
+    for decoded_part in decoded_tuples:
         if decoded_part[1] is None:
-            decoded_str += decoded_part[0].encode(fbcode)
+            decoded_str += decoded_part[0]
         else:
             decoded_str += decoded_part[0].decode(decoded_part[1],"ignore" )
+        assert type(decoded_str) == str
     return decoded_str
 
 
