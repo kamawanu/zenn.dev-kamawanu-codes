@@ -50,6 +50,7 @@ class discretemedia:
 
     def __init__(self, beheader: List[list]):
         # print(beheader)
+        #dict(beheader)
         self._rawheader = dict([(xx[0].lower(), xx[1]) for xx in beheader])
         self._rawbody = []
         # print(self.header)
