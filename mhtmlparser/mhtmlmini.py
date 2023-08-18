@@ -86,9 +86,12 @@ def subjectdecode(qp_subject_header: str) -> str:
     decoded_tuples = decode_header(qp_subject_header)
     decoded_str = ""
 
+    pick_encodes=set([ x[1] for x in decoded_tuples if x[1] is not None ])
+
     for decoded_part in decoded_tuples:
         if decoded_part[1] is None:
-            decoded_str += decoded_part[0]
+            assert type(decoded_part[0]) == str, (qp_subject_header,decoded_tuples,pick_encodes)
+            decoded_str += decoded_part[0] ##.decode(next(pick_encodes),"ignore")
         else:
             decoded_str += decoded_part[0].decode(decoded_part[1],"ignore" )
         assert type(decoded_str) == str
