@@ -85,12 +85,13 @@ def subjectdecode(qp_subject_header: str) -> str:
     decoded_tuples = decode_header(qp_subject_header)
     decoded_str = ""
 
+    has_charset=set([ x[1] for x in decoded_tuples if x[1] is not None ])
+
     for decoded_part in decoded_tuples:
-        if decoded_part[1] is None:
-            decoded_str += decoded_part[0]
-        else:
+        if decoded_part[1] is not None:
             decoded_str += decoded_part[0].decode(decoded_part[1],"ignore" )
-        assert type(decoded_str) == str
+        elif len(has_charset) > 0:
+            decoded_str += decoded_part[0].decode(next(iter(has_charset)))
     return decoded_str
 
 
