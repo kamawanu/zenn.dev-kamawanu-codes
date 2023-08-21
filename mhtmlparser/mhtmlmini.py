@@ -134,6 +134,8 @@ class compositemedia:
 
     def gethome(self) -> discretemedia:
         # breakpoint()
+        if self._homefileptr is None:
+          return None
         return self.subparts[self._homefileptr]
 
     @classmethod
@@ -166,7 +168,7 @@ class compositemedia:
                 pendingheaders = []
             else:
                 mparts.lastpart._rawbody.append(buf)
-        assert pendingheaders is None
+        assert pendingheaders is None or pendingheaders == [], pendingheaders
         return mparts
 
 def from_file(fn):
