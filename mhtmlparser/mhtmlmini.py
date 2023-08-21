@@ -51,7 +51,11 @@ class discretemedia:
     def __init__(self, beheader: List[list]):
         # print(beheader)
         #dict(beheader)
-        self._rawheader = dict([(xx[0].lower(), xx[1]) for xx in beheader])
+        try:
+          self._rawheader = dict([(xx[0].lower(), xx[1] ) for xx in beheader if len(xx) == 2 ])
+        except IndexError as exc:
+          print(beheader)
+          raise exc
         self._rawbody = []
         # print(self.header)
         if "content-type" in self._rawheader:
