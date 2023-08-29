@@ -51,7 +51,11 @@ class discretemedia:
     def __init__(self, beheader: List[list]):
         # print(beheader)
         #dict(beheader)
-        self._rawheader = dict([(xx[0].lower(), xx[1]) for xx in beheader])
+        try:
+          self._rawheader = dict([(xx[0].lower(), xx[1] ) for xx in beheader if len(xx) == 2 ])
+        except IndexError as exc:
+          print(beheader)
+          raise exc
         self._rawbody = []
         # print(self.header)
         if "content-type" in self._rawheader:
@@ -130,6 +134,8 @@ class compositemedia:
 
     def gethome(self) -> discretemedia:
         # breakpoint()
+        if self._homefileptr is None:
+          return None
         return self.subparts[self._homefileptr]
 
     @classmethod
@@ -162,7 +168,7 @@ class compositemedia:
                 pendingheaders = []
             else:
                 mparts.lastpart._rawbody.append(buf)
-        assert pendingheaders is None
+        assert pendingheaders is None or pendingheaders == [], pendingheaders
         return mparts
 
 def from_file(fn):
