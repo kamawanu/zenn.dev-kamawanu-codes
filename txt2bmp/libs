@@ -1,0 +1,2 @@
+sudo apt install -yq python3-pip mercurial
+sudo pip3 install pillow
