@@ -1,5 +1,5 @@
 #!/bin/bash -x
-set -xe
+set -e
 #V=370.0.0
 if [ -f env ]
 then
@@ -34,7 +34,7 @@ then
     #fgrep google-cloud-sdk/path.bash.inc $HOME/.bashrc
     which gcloud || . $HOME/google-cloud-sdk/path.bash.inc
     gcloud components reinstall
-    gcloud components install app-engine-python app-engine-python-extras
+    gcloud components install app-engine-python 
 fi
 #set -xe
 MYPRJ=$( cut -d. -f1 < APPVER )
@@ -42,4 +42,4 @@ export CLOUDSDK_CORE_PROJECT=$MYPRJ
 VERSION=$( cut -d. -f2 < APPVER )
 
 . $HOME/google-cloud-sdk/path.bash.inc
-exec $*
+exec nice $*
