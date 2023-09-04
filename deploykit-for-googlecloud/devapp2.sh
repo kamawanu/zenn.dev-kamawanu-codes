@@ -12,6 +12,4 @@ export JAVA_TOOL_OPTIONS="-Xmx4g"
 --port 8110 --host $MYIP \
 --admin_port 8112 --admin_host $MYIP \
 --enable_host_checking 0 \
---support_datastore_emulator=yes \
---datastore_emulator_port=8200 \
---skip_sdk_update_check --storage_path dbemulate/ app/
+--skip_sdk_update_check $* app/
