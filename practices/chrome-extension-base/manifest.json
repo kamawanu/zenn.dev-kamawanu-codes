@@ -1,0 +1,28 @@
+{
+    "name": "base",
+    "description": "base",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "worker.js"
+    },
+    "permissions": [
+        "storage",
+        "tabs"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "icons": {},
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "run_at": "document_end",
+            "js": [
+                "document_end.js"
+            ]
+        }
+    ]
+}
