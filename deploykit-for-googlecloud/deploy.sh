@@ -15,6 +15,8 @@ fi
 ###ls -C
 OV=$( curl -qs https://$VERSION-dot-$MYPRJ.appspot.com/isversion )
 bash -xe ./gcloudrun.sh gcloud app deploy $DIR --no-promote --version=$VERSION  
+bash ./gcloudrun.sh gcloud datastore indexes create $DIR/index.yaml
 NV=$( curl -qs https://$VERSION-dot-$MYPRJ.appspot.com/isversion )
 hg qnew $NV
 hg qfinish -a
+
