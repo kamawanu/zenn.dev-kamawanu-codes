@@ -1,18 +1,19 @@
 from typing import Any, Iterable
-import logging
 
 
-def iterable(src) -> bool:
-    return type(src) in (list, tuple) or hasattr(src, "__iter__")
+def isiterable(src) -> bool:
+    if type(src) == str:
+        return False
+    return hasattr(src, "__iter__") and callable(src.__iter__)
 
 
-def flatteniter(src: Iterable[Any | Iterable]) -> Iterable:
+def iterflatten(src: Iterable[Any | Iterable]) -> Iterable:
     for datum in src:
-        if iterable(datum):
-            yield from flatteniter(datum)
+        if isiterable(datum):
+            yield from iterflatten(datum)
         else:
             yield datum
 
 
 def flatten(src: Iterable[Any | Iterable]) -> tuple:
-    return tuple(flatteniter(src))
+    return tuple(iterflatten(src))
