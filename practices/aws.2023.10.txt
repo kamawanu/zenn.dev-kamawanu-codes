@@ -1,0 +1,232 @@
+AWS IoT Core : デバイスをクラウドに接続 https://aws.amazon.com/jp/iot-core/
+AWS IoT FleetWise : 車両データをほぼリアルタイムで簡単に収集し、変換して、クラウドに転送 https://aws.amazon.com/jp/iot-fleetwise/
+AWS IoT SiteWise : IoT データコレクターおよびインタプリタ https://aws.amazon.com/jp/iot-sitewise/
+AWS IoT TwinMaker : 実世界システムのデジタルツインを簡単に作成して業務を最適化 https://aws.amazon.com/jp/iot-twinmaker/
+AWS IoT Greengrass : デバイスのローカルでのコンピューティング、メッセージング、同期 https://aws.amazon.com/jp/greengrass/
+AWS Cloud WAN : グローバル広域ネットワークを簡単に構築、管理、およびモニタリング https://aws.amazon.com/jp/cloudwan/
+AWS Local Zones : レイテンシーの影響を受けやすいアプリケーションをエンドユーザーにより近い場所で実行 https://aws.amazon.com/jp/local/zones/
+AWS Verified Access (プレビュー) : VPN なしで企業アプリケーションに安全にアクセス https://aws.amazon.com/jp/ (※正確なリンクが見つかりませんでした)
+Amazon OpenSearch Service : テキストと非構造化データの検索、視覚化、および分析を最大ペタバイト規模で実行 https://aws.amazon.com/jp/opensearch-service/
+Amazon Aurora : 高性能のマネージドリレーショナルデータベース https://aws.amazon.com/jp/aurora/
+Amazon Braket : 量子コンピューティングの研究を加速 https://aws.amazon.com/jp/braket/
+Amazon Chime : フラストレーションフリーの会議、ビデオ電話、チャット https://aws.amazon.com/jp/chime/
+Amazon Chime SDK : リアルタイムメッセージング、オーディオ、動画、および画面共有 https://aws.amazon.com/jp/chime/ (※同じリンクがSDKにも使用されています)
+Amazon CloudFront : グローバルなコンテンツ配信ネットワーク https://aws.amazon.com/jp/cloudfront/
+Amazon CloudSearch : マネージド型検索サービス https://aws.amazon.com/jp/cloudsearch/
+Amazon CloudWatch : リソースとアプリケーションのモニタリング https://aws.amazon.com/jp/cloudwatch/
+Amazon CodeCatalyst (プレビュー) : AWS での迅速な開発と配信を実現する統合ソフトウェア開発サービス https://aws.amazon.com/jp/ (※正確なリンクが見つかりませんでした)
+Amazon CodeGuru : 最もコストがかかるコード行を見つける https://aws.amazon.com/jp/codeguru/
+Amazon Cognito : アプリケーションの ID 管理 https://aws.amazon.com/jp/cognito/
+Amazon Comprehend : テキスト内でインサイトや関係性を検出 https://aws.amazon.com/jp/comprehend/
+Amazon Connect : オムニチャネルのクラウドコンタクトセンター https://aws.amazon.com/jp/connect/
+Amazon Corretto : 本番環境対応の OpenJDK ディストリビューション https://aws.amazon.com/jp/corretto/
+Amazon DataZone (プレビュー) : 組み込みのガバナンスで組織の枠を超えたデータ活用を実現 https://aws.amazon.com/jp/ (※正確なリンクが見つかりませんでした)
+Amazon Detective : 潜在的なセキュリティ問題の調査 https://aws.amazon.com/jp/detective/
+Amazon DevOps Guru : アプリケーションの可用性を向上させるML駆動のクラウドオペレーションサービス https://aws.amazon.com/jp/ (※正確なリンクが見つかりませんでした)
+Amazon DocumentDB : フルマネージドドキュメントデータベース https://aws.amazon.com/jp/documentdb/
+Amazon DynamoDB : マネージド型のNoSQLデータベース https://aws.amazon.com/jp/dynamodb/
+Amazon EC2 : クラウド内の仮想サーバー https://aws.amazon.com/jp/ec2/
+Amazon EC2 Auto Scaling : 需要に合わせてコンピューティング性能をスケール https://aws.amazon.com/jp/ec2/autoscaling/
+Amazon EC2 スポットインスタンス : ワークロードを最大90%割引で実行 https://aws.amazon.com/jp/ec2/spot/
+Amazon Elastic Block Store (EBS) : EC2ブロックストレージボリューム https://aws.amazon.com/jp/ebs/
+Amazon Elastic Container Registry (ECR) : コンテナイメージを簡単に保存、管理、デプロイ https://aws.amazon.com/jp/ecr/
+Amazon Elastic Container Service (ECS) : コンテナを実行するための安全性、信頼性、および拡張性に優れた方法 https://aws.amazon.com/jp/ecs/
+Amazon Elastic File System (EFS) : EC2用フルマネージド型ファイルシステム https://aws.amazon.com/jp/efs/
+Amazon Elastic Inference : 深層学習推論アクセラレーション https://aws.amazon.com/jp/machine-learning/elastic-inference/
+Amazon Elastic Kubernetes Service (EKS) : 信頼性が最も高いKubernetesの実行方法 https://aws.amazon.com/jp/eks/
+Amazon Elastic Transcoder : 使いやすいスケーラブルなメディア変換サービス https://aws.amazon.com/jp/elastictranscoder/
+Amazon ElastiCache : インメモリキャッシングサービス https://aws.amazon.com/jp/elasticache/
+Amazon EMR : ホストされたHadoopフレームワーク https://aws.amazon.com/jp/emr/
+Amazon EventBridge : SaaS アプリと AWS のサービス向けサーバーレスイベントバス https://aws.amazon.com/jp/eventbridge/
+Amazon FinSpace : 金融業界データの保存、カタログ化、準備、および分析を数分で実行 https://aws.amazon.com/jp/finspace/
+Amazon Forecast : 機械学習を使用して予測の精度を向上 https://aws.amazon.com/jp/forecast/
+Amazon Fraud Detector : より多くのオンライン詐欺をよりすばやく検知 https://aws.amazon.com/jp/fraud-detector/
+Amazon FSx : 数回クリックするだけで、機能が豊富でパフォーマンスの高いファイルシステムを起動、実行、スケール https://aws.amazon.com/jp/fsx/
+Amazon GameLift : シンプルかつ高速でコスト効率性に優れた専用のゲームサーバーホスティング https://aws.amazon.com/jp/gamelift/
+Amazon GuardDuty : マネージド型脅威検出サービス https://aws.amazon.com/jp/guardduty/
+Amazon HealthLake : ヘルスデータの安全な保存、変換、クエリ、および分析を数分で実行 https://aws.amazon.com/jp/healthlake/
+Amazon Honeycode : プログラミングなしでモバイルおよびウェブアプリケーションを構築 https://aws.amazon.com/jp/honeycode/
+Amazon Inspector : Amazon EC2 と Amazon ECR 向けの自動化された継続的な脆弱性管理 https://aws.amazon.com/jp/inspector/
+Amazon Interactive Video Service : 魅力的なライブストリーミング体験を構築 https://aws.amazon.com/jp/ivs/
+Amazon Kendra : 機械学習によるエンタープライズ検索の刷新 https://aws.amazon.com/jp/kendra/
+Amazon Keyspaces (Apache Cassandra 向け) : Cassandra 対応のマネージドデータベース https://aws.amazon.com/jp/keyspaces/
+Amazon Kinesis : リアルタイムの動画とデータストリームの分析 https://aws.amazon.com/jp/kinesis/
+Amazon Kinesis Video Streams : 動画ストリームの処理と分析 https://aws.amazon.com/jp/kinesis-video-streams/
+Amazon Lex : 音声およびテキストチャットボットの構築 https://aws.amazon.com/jp/lex/
+Amazon Lightsail : 仮想プライベートサーバーを起動および管理 https://aws.amazon.com/jp/lightsail/
+Amazon Location Service : アプリケーションにロケーションデータをセキュアかつ簡単に追加 https://aws.amazon.com/jp/location/
+Amazon Lookout for Equipment : センサーデータを分析して、機器の異常な動作を検出します https://aws.amazon.com/jp/lookout-for-equipment/
+Amazon Lookout for Metrics : メトリクス内の異常を自動的に検出して、その根本原因を特定 https://aws.amazon.com/jp/lookout-for-metrics/
+Amazon Lookout for Vision : コンピュータビジョンを使用して製品欠陥を検出し、品質検査を自動化 https://aws.amazon.com/jp/lookout-for-vision/
+Amazon Lumberyard : AWS および Twitch と統合された、すべてのソースを利用できる無料のクロスプラットフォーム 3D ゲームエンジン https://aws.amazon.com/jp/lumberyard/
+Amazon Macie : 機密データの大規模な検出と保護 https://aws.amazon.com/jp/macie/
+Amazon Managed Blockchain : スケーラブルなブロックチェーンネットワークの作成および管理 https://aws.amazon.com/jp/managed-blockchain/
+Amazon Managed Grafana : オペレーション上のメトリクス、ログおよびトレースのためのスケーラブルかつ安全で、可用性に優れたデータビジュアライゼーション https://aws.amazon.com/jp/grafana/
+Amazon Managed Service for Prometheus : コンテナのための可用性と安全性に優れたマネージドモニタリング https://aws.amazon.com/jp/prometheus/
+Amazon Managed Streaming for Apache Kafka (MSK) : フルマネージド型 Apache Kafka サービス https://aws.amazon.com/jp/msk/
+Amazon Managed Workflows for Apache Airflow (MWAA) : Apache Airflow 向けの可用性に優れたセキュアなマネージドワークフローオーケストレーション https://aws.amazon.com/jp/mwaa/
+Amazon MemoryDB for Redis : 超高速パフォーマンスを実現する、Redis 互換性と耐久性を備えたインメモリデータベースサービス https://aws.amazon.com/jp/memorydb/
+Amazon MQ : マネージド型メッセージブローカーサービス https://aws.amazon.com/jp/mq/
+Amazon Neptune : フルマネージドグラフデータベースサービス https://aws.amazon.com/jp/neptune/
+Amazon Nimble Studio : クラウドでのコンテンツ作成を加速 https://aws.amazon.com/jp/nimble-studio/
+Amazon Omics : オミックスデータからインサイトを取得 https://aws.amazon.com/jp/omics/
+Amazon Personalize : アプリケーションへのリアルタイムレコメンデーションの構築 https://aws.amazon.com/jp/personalize/
+Amazon Pinpoint : マルチチャネルマーケティングコミュニケーション https://aws.amazon.com/jp/pinpoint/
+Amazon Polly : テキストをリアルな音声に変換 https://aws.amazon.com/jp/polly/
+Amazon Quantum Ledger Database (QLDB) : フルマネージド台帳データベース https://aws.amazon.com/jp/qldb/
+Amazon QuickSight : 高速なビジネス分析サービス https://aws.amazon.com/jp/quicksight/
+Amazon RDS : MySQL、PostgreSQL、Oracle、SQL Server、および MariaDB のためのマネージドリレーショナルデータベースサービス https://aws.amazon.com/jp/rds/
+Amazon RDS on VMware : オンプレミスデータベース管理の自動化 https://aws.amazon.com/jp/rds/vmware/
+Amazon Redshift : 高速、シンプル、費用対効果の高いデータウェアハウジングサービス https://aws.amazon.com/jp/redshift/
+Amazon Rekognition : 画像と動画を分析 https://aws.amazon.com/jp/rekognition/
+Amazon Route 53 : スケーラブルなドメインネームシステム (DNS) https://aws.amazon.com/jp/route53/
+Amazon S3 Glacier : クラウド内の低コストなアーカイブストレージ https://aws.amazon.com/jp/glacier/
+Amazon SageMaker : 機械学習モデルを大規模に構築、トレーニング、デプロイ https://aws.amazon.com/jp/sagemaker/
+Amazon SageMaker Ground Truth : 精度の高い機械学習トレーニングデータセットの構築 https://aws.amazon.com/jp/sagemaker/groundtruth/
+Amazon Security Lake (プレビュー) : 数クリックでセキュリティデータを自動で一元化 https://aws.amazon.com/jp/security-lake/
+Amazon Simple Email Service (SES) : 大規模なインバウンドおよびアウトバウンドメール https://aws.amazon.com/jp/ses/
+Amazon Simple Notification Service (SNS) : Pub/sub、SMS、E メール、およびモバイルプッシュ通知 https://aws.amazon.com/jp/sns/
+Amazon Simple Queue Service (SQS) : マネージドメッセージキュー https://aws.amazon.com/jp/sqs/
+Amazon Simple Storage Service (S3) : どこからでも簡単に、お好みの量のデータを取得できるオブジェクトストレージ https://aws.amazon.com/jp/s3/
+Amazon Textract : ドキュメントからのテキストとデータの抽出 https://aws.amazon.com/jp/textract/
+Amazon Timestream : フルマネージド時系列データベース https://aws.amazon.com/jp/timestream/
+Amazon Transcribe : 自動音声認識 https://aws.amazon.com/jp/transcribe/
+Amazon Translate : 自然で流ちょうな言語翻訳 https://aws.amazon.com/jp/translate/
+Amazon Verified Permissions (プレビュー版) : アプリケーションの認可とアクセス権限をきめ細かく設定 https://aws.amazon.com/jp/verified-permissions/
+Amazon VPC : 独立したクラウドリソース https://aws.amazon.com/jp/vpc/
+Amazon WorkDocs : エンタープライズドキュメントのセキュアな保存と共有 https://aws.amazon.com/jp/workdocs/
+Amazon WorkLink : 社内ウェブサイトへのモバイルアクセスを可能に https://aws.amazon.com/jp/worklink/
+Amazon WorkMail : セキュリティに優れた E メールとカレンダー https://aws.amazon.com/jp/workmail/
+Amazon WorkSpaces : クラウド内の仮想デスクトップ https://aws.amazon.com/jp/workspaces/
+Apache MXNet on AWS : スケーラブルなオープンソースの深層学習フレームワーク https://aws.amazon.com/jp/mxnet/
+AWS Application Migration Service (MGN) : アプリケーションの移行とモダナイゼーションを自動化 https://aws.amazon.com/jp/application-migration-service/
+AWS Amplify : スケーラブルなウェブアプリケーションおよびモバイルアプリケーションを構築、デプロイ、ホスト、管理する https://aws.amazon.com/jp/amplify/
+AWS App Mesh : マイクロサービスのモニタリングと制御 https://aws.amazon.com/jp/app-mesh/
+AWS App Runner : 大規模な本番ウェブアプリケーションの開発を容易にする https://aws.amazon.com/jp/apprunner/
+AWS App2Container : 既存のアプリケーションのコンテナ化と移行 https://aws.amazon.com/jp/app2container/
+AWS Application Composer (プレビュー) : サーバーレスアプリケーションを視覚的に設計し、迅速に構築する https://aws.amazon.com/jp/application-composer/
+AWS Application Discovery Service : 移行を効率化するためのオンプレミスアプリケーションの検出 https://aws.amazon.com/jp/application-discovery/
+AWS AppSync : フルマネージドのスケーラブルな GraphQL API を使用してアプリケーション開発を加速する https://aws.amazon.com/jp/appsync/
+AWS Artifact : AWS のコンプライアンスレポートへのオンデマンドアクセス https://aws.amazon.com/jp/artifact/
+AWS Audit Manager : AWS の使用状況を継続的に監査して、リスクとコンプライアンスの評価方法を簡素化 https://aws.amazon.com/jp/audit-manager/
+AWS Auto Scaling : 需要に合わせて複数のリソースをスケール https://aws.amazon.com/jp/autoscaling/
+AWS Backup : AWS のサービス全体で一元化されたバックアップ https://aws.amazon.com/jp/aws-backup/
+AWS Batch : あらゆる規模でのバッチジョブの実行 https://aws.amazon.com/jp/batch/
+AWS Budgets : コストと使用量のカスタマイズされた予算の設定 https://aws.amazon.com/jp/aws-cost-management/aws-budgets/
+AWS Certificate Manager : SSL/TLS 証明書のプロビジョン、管理、およびデプロイ https://aws.amazon.com/jp/certificate-manager/
+AWS Chatbot : ChatOps for AWS https://aws.amazon.com/jp/chatbot/
+AWS Clean Rooms (プレビュー) : 基礎となるデータを共有または公開することなく、データセットの照合、分析、コラボレーションを実現 https://aws.amazon.com/jp/clean-rooms/
+AWS Cloud Control API : 一貫性のある API で AWS とサードパーティーのクラウドインフラストラクチャを管理 https://aws.amazon.com/jp/cloud-control-api/
+AWS Cloud Development Kit (CDK) : コードを使用したクラウドインフラストラクチャのモデル化 https://aws.amazon.com/jp/cdk/
+AWS Cloud Map : クラウドリソースのためのサービスディスカバリ https://aws.amazon.com/jp/cloud-map/
+AWS Cloud9 : Cloud IDE でコードを記述、実行、デバッグ https://aws.amazon.com/jp/cloud9/
+AWS CloudFormation : テンプレートを使用したリソースの作成と管理 https://aws.amazon.com/jp/cloudformation/
+AWS CloudHSM : 規制コンプライアンスのためのハードウェアベースのキーストレージ https://aws.amazon.com/jp/cloudhsm/
+AWS CloudShell : コマンドラインでブラウザから直接 AWS のリソースとツールにアクセス https://aws.amazon.com/jp/cloudshell/
+AWS CloudTrail : ユーザーアクティビティと API 使用状況の追跡 https://aws.amazon.com/jp/cloudtrail/
+AWS CodeArtifact : ソフトウェア開発のためのセキュアかつスケーラブルでコスト効率性に優れたアーティファクト管理 https://aws.amazon.com/jp/codeartifact/
+AWS CodeBuild : コードの構築とテスト https://aws.amazon.com/jp/codebuild/
+AWS CodeCommit : プライベート Git リポジトリへのコードの保存 https://aws.amazon.com/jp/codecommit/
+AWS CodeDeploy : コードデプロイの自動化 https://aws.amazon.com/jp/codedeploy/
+AWS CodePipeline : 継続的デリバリーを使用したソフトウェアのリリース https://aws.amazon.com/jp/codepipeline/
+AWS CodeStar : AWS アプリケーションを開発およびデプロイ https://aws.amazon.com/jp/codestar/
+AWS Compute Optimizer : 最適な AWS コンピューティングリソースの特定 https://aws.amazon.com/jp/compute-optimizer/
+AWS Config : リソースのインベントリと変更の追跡 https://aws.amazon.com/jp/config/
+AWS Console Mobile Application : 外出先でリソースにアクセス https://aws.amazon.com/jp/console-mobile-application/
+AWS Control Tower : 安全かつ基準に準拠した複数のアカウント環境をセットアップおよび管理 https://aws.amazon.com/jp/controltower/
+AWS Copilot : AWS Copilot は、AWS でコンテナ化されたアプリケーションを起動して管理するための最も簡単な方法です https://aws.amazon.com/jp/copilot/
+AWS Cost and Usage Report : 包括的なコストと使用状況の情報にアクセス https://aws.amazon.com/jp/aws-cost-management/aws-cost-and-usage-report/
+AWS Cost Explorer : AWS のコストと使用状況を分析 https://aws.amazon.com/jp/aws-cost-management/aws-cost-explorer/
+AWS Data Exchange : クラウド上でサードパーティのデータを検索、サブスクライブ、および使用する https://aws.amazon.com/jp/data-exchange/
+AWS Data Pipeline : 定期的なデータ駆動型のワークフローのためのオーケストレーションサービス https://aws.amazon.com/jp/data-pipeline/
+AWS Database Migration Service (DMS) : ダウンタイムを最小限に抑えたデータベースの移行 https://aws.amazon.com/jp/dms/
+AWS Deep Learning Containers : 深層学習のための Docker イメージ https://aws.amazon.com/jp/deep-learning-containers/
+AWS DeepComposer : 機械学習対応のミュージカルキーボード https://aws.amazon.com/jp/deepcomposer/
+AWS DeepLens : 深層学習対応のビデオカメラ https://aws.amazon.com/jp/deeplens/
+AWS DeepRacer : 機械学習による 18 分の 1 のスケールでの自律走行型レースカー https://aws.amazon.com/jp/deepracer/
+AWS Device Farm : AWS クラウド内の実際のデバイスを使った Android、iOS、ウェブアプリケーションのテスト https://aws.amazon.com/jp/device-farm/
+AWS Direct Connect : AWS への専用ネットワーク接続 https://aws.amazon.com/jp/direct-connect/
+AWS Directory Service : Active Directory をホスティングおよび管理 https://aws.amazon.com/jp/directory-service/
+AWS Distro for OpenTelemetry : 予測可能なパフォーマンス性を備えたセキュアで本番環境対応のオープンソースディストリビューション https://aws.amazon.com/jp/distro-for-opentelemetry/
+AWS Elastic Beanstalk : ウェブアプリケーションを実行および管理 https://aws.amazon.com/jp/elasticbeanstalk/
+AWS Elemental MediaConnect : 高信頼性、高安全性のライブ動画転送 https://aws.amazon.com/jp/mediaconnect/
+AWS Elemental MediaConvert : ファイルベースの動画コンテンツの変換 https://aws.amazon.com/jp/mediaconvert/
+AWS Elemental MediaLive : ライブ動画コンテンツの変換 https://aws.amazon.com/jp/medialive/
+AWS Elemental MediaPackage : 動画の発信とパッケージ化 https://aws.amazon.com/jp/mediapackage/
+AWS Elemental MediaStore : メディアストレージとシンプルな HTTP オリジン https://aws.amazon.com/jp/mediastore/
+AWS Elemental Appliances and Software : オンプレミスメディアソリューション https://aws.amazon.com/jp/elemental-appliances-software/
+AWS Fargate : コンテナのためのサーバーレスコンピューティング https://aws.amazon.com/jp/fargate/
+AWS Fault Injection Simulator : コントロールされた実験で回復性とパフォーマンスを改善する https://aws.amazon.com/jp/fis/
+AWS Firewall Manager : ファイアウォールルールの一元管理 https://aws.amazon.com/jp/firewall-manager/
+AWS Global Accelerator : アプリケーションの可用性とパフォーマンスの向上 https://aws.amazon.com/jp/global-accelerator/
+AWS Glue : シンプルでスケーラブルなサーバーレスデータ統合 https://aws.amazon.com/jp/glue/
+AWS Ground Station : フルマネージド Ground Station as a Service (GSaaS) https://aws.amazon.com/jp/ground-station/
+AWS Identity and Access Management : サービスとリソースへのアクセスのセキュアな管理 https://aws.amazon.com/jp/iam/
+AWS Inferentia : 機械学習推論チップ https://aws.amazon.com/jp/inferentia/
+AWS IoT 1-Click : AWS Lambda トリガーをワンクリックで作成 https://aws.amazon.com/jp/iot-1-click/
+AWS IoT Analytics : IoT デバイスのための分析 https://aws.amazon.com/jp/iot-analytics/
+AWS IoT Device Defender : IoT デバイスのためのセキュリティ管理 https://aws.amazon.com/jp/iot-device-defender/
+AWS IoT Device Management : IoT デバイスのオンボード、編成、リモート管理 https://aws.amazon.com/jp/iot-device-management/
+AWS IoT EduKit : リファレンスハードウェアとステップバイステップのチュートリアルでシンプルな IoT アプリケーションの構築方法を習得 https://aws.amazon.com/jp/iot-edukit/
+AWS IoT Events : IoT イベントを検出し、対応 https://aws.amazon.com/jp/iot-events/
+AWS IoT RoboRunner : ロボットのフリートがシームレスに連携するためのアプリケーションを構築 https://aws.amazon.com/jp/iot-roborunner/
+AWS IoT Things Graph : デバイスとウェブサービスを簡単に接続 https://aws.amazon.com/jp/iot-things-graph/
+AWS IoT ボタン : クラウドでプログラムできるダッシュボタン https://aws.amazon.com/jp/iot-button/
+AWS Key Management Service (KMS) : マネージド型の暗号化キーの作成と管理 https://aws.amazon.com/jp/kms/
+AWS Lake Formation : セキュアなデータレイクを数日間で構築 https://aws.amazon.com/jp/lake-formation/
+AWS Lambda : サーバーに煩わされずにコードを実行 https://aws.amazon.com/jp/lambda/
+AWS Launch Wizard : AWS でサードパーティーアプリケーションを簡単にサイズ調整、設定、およびデプロイ https://aws.amazon.com/jp/launch-wizard/
+AWS License Manager : ライセンスの追跡、管理、および制御 https://aws.amazon.com/jp/license-manager/
+AWS Mainframe Modernization : メインフレームワークロードの移行、モダナイゼーション、運用、および実行 https://aws.amazon.com/jp/mainframe-modernization/
+AWS Migration Hub : 複数の移行の追跡を 1 か所から実行 https://aws.amazon.com/jp/migration-hub/
+AWS Network Firewall : 数回クリックするだけで、Amazon VPC 全体にネットワークセキュリティをデプロイ https://aws.amazon.com/jp/network-firewall/
+AWS OpsWorks : Chef や Puppet を使った運用の自動化 https://aws.amazon.com/jp/opsworks/
+AWS Organizations : AWS アカウント全体に対する一元的なガバナンスと管理 https://aws.amazon.com/jp/organizations/
+AWS Outposts : AWS インフラストラクチャをオンプレミスで実行 https://aws.amazon.com/jp/outposts/
+AWS Panorama : エッジでのコンピュータビジョンでオペレーションを改善 https://aws.amazon.com/jp/panorama/
+AWS Partner Device Catalog : AWS 互換の IoT ハードウェアの精選カタログ https://aws.amazon.com/jp/iot-device-catalog/
+AWS Personal Health Dashboard : AWS のサービスヘルスのパーソナライズされたビュー https://aws.amazon.com/jp/premiumsupport/technology/personal-health-dashboard/
+AWS Private 5G : プライベートセルラーネットワークを簡単にデプロイ、管理、およびスケーリング https://aws.amazon.com/jp/private-5g/
+AWS PrivateLink : AWS でホストされているサービスへのセキュアなアクセス https://aws.amazon.com/jp/privatelink/
+AWS Proton : コンテナおよびサーバーレスデプロイ向けの管理の自動化 https://aws.amazon.com/jp/proton/
+AWS Resilience Hub : アプリケーションを中断に備えて保護する https://aws.amazon.com/jp/resilience-hub/
+AWS Resource Access Manager : AWS のリソースを共有するためのシンプルで安全なサービス https://aws.amazon.com/jp/ram/
+AWS RoboMaker : ロボット工学アプリケーションの開発、テスト、およびデプロイ https://aws.amazon.com/jp/robomaker/
+AWS Secrets Manager : 秘密情報のローテーション、管理、および取得 https://aws.amazon.com/jp/secrets-manager/
+AWS Security Hub : 統合されたセキュリティおよびコンプライアンスセンター https://aws.amazon.com/jp/security-hub/
+AWS Server Migration Service (SMS) : オンプレミスサーバーの AWS への移行 https://aws.amazon.com/jp/server-migration-service/
+AWS Serverless Application Repository : サーバーレスアプリケーションの検索、デプロイ、および公開 https://aws.amazon.com/jp/serverless/serverlessrepo/
+AWS Service Catalog : 標準化された製品の作成と利用 https://aws.amazon.com/jp/servicecatalog/
+AWS Service Management Connector : サービス管理ツール内で AWS リソースをプロビジョニング、管理、運用する https://aws.amazon.com/jp/service-management-connector/
+AWS Shield : DDoS 保護 https://aws.amazon.com/jp/shield/
+AWS SimSpace Weaver : AWS マネージドのインフラストラクチャで動的かつ大規模な空間シミュレーションを構築 https://aws.amazon.com/jp/simspace-weaver/
+AWS Single Sign-On (SSO) : クラウド Single Sign-On (SSO) サービス https://aws.amazon.com/jp/single-sign-on/
+AWS Snow ファミリー : 険しい環境または切断された環境でのエッジコンピューティングとストレージのための物理デバイス https://aws.amazon.com/jp/snow/
+AWS Step Functions : 分散型アプリケーションの調整 https://aws.amazon.com/jp/step-functions/
+AWS Storage Gateway : ハイブリッドストレージの統合 https://aws.amazon.com/jp/storage-gateway/
+AWS Supply Chain (プレビュー) : 機械学習を活用したサプライチェーンアプリケーションでリスクの軽減とコストの削減を実現 https://aws.amazon.com/jp/supply-chain/
+AWS Systems Manager : 運用時のインサイトに基づいて改善する https://aws.amazon.com/jp/systems-manager/
+AWS Transfer Family : フルマネージド SFTP、FTPS、および FTP サービス https://aws.amazon.com/jp/transfer-family/
+AWS Transit Gateway : VPC とアカウント接続を簡単にスケール https://aws.amazon.com/jp/transit-gateway/
+AWS Trusted Advisor : パフォーマンスとセキュリティを最適化 https://aws.amazon.com/jp/premiumsupport/technology/trusted-advisor/
+AWS VPN : ネットワークリソースへのセキュアなアクセス https://aws.amazon.com/jp/vpn/
+AWS WAF : 悪意のあるウェブトラフィックをフィルタリング https://aws.amazon.com/jp/waf/
+AWS Wavelength : 5G デバイス向けの超低レイテンシーアプリケーションを提供 https://aws.amazon.com/jp/wavelength/
+AWS Well-Architected Tool : ワークロードの見直しと改善 https://aws.amazon.com/jp/well-architected-tool/
+AWS Wickr : 企業の通信をエンドツーエンドで暗号化して保護 https://aws.amazon.com/jp/wickr/
+AWS X-Ray : アプリケーションの分析とデバッグ https://aws.amazon.com/jp/xray/
+AWS のツールと SDK : AWS のためのツールと SDK https://aws.amazon.com/jp/tools/
+AWS Command Line Interface (CLI) : AWS のサービスを管理するための統合ツール https://aws.amazon.com/jp/cli/
+AWS マネジメントコンソール : ウェブベースのユーザーインターフェイス https://aws.amazon.com/jp/console/
+AWS Managed Services : AWS のインフラストラクチャ運用管理 https://aws.amazon.com/jp/managed-services/
+AWS 深層学習 AMI : Amazon EC2 での深層学習 https://aws.amazon.com/jp/machine-learning/amis/
+AWS Elastic Disaster Recovery (DRS) : スケーラブルでコスト効率性に優れた AWS へのアプリケーションの復旧 https://aws.amazon.com/jp/disaster-recovery/
+Elastic Load Balancing (ELB) : 複数のターゲットにわたる着信トラフィックの分配 https://aws.amazon.com/jp/elasticloadbalancing/
+FreeRTOS : マイクロコントローラ向けリアルタイムオペレーティングシステム https://aws.amazon.com/jp/freertos/
+Migration Evaluator (旧 TSO Logic) : クラウド移行のビジネスケースを作成 https://aws.amazon.com/jp/migration-evaluator/
+PyTorch on AWS : 柔軟なオープンソースの機械学習フレームワーク https://aws.amazon.com/jp/deeplearning/amis/pytorch/
+Red Hat OpenShift Service on AWS : クラウドでのマネージド OpenShift https://aws.amazon.com/jp/openshift/
+Savings Plans : 柔軟な料金設定でコンピューティング使用コストを最大 72% 節約 https://aws.amazon.com/jp/savingsplans/
+TensorFlow on AWS : オープンソースのマシンインテリジェンスライブラリ https://aws.amazon.com/jp/deeplearning/amis/tensorflow/
+VMware Cloud on AWS : カスタムハードウェアを使用せずにハイブリッドクラウドを構築 https://aws.amazon.com/jp/vmware/
+リザーブドインスタンス (RI) レポート : リザーブドインスタンス (RI) の詳細を把握する https://aws.amazon.com/jp/
