@@ -1,23 +1,49 @@
-Compute Engine: スケーラブルで高性能な仮想マシン。1 つの e2-micro インスタンスが月々無料。
-Cloud Storage: 高い性能と信頼性を持ち、様々なストレージ要件に対応。5 GB-月の Standard Storageが無料。
-BigQuery: ペタバイト規模のフルマネージド分析データウェアハウス。月々1 TBのクエリが無料。
-Google Kubernetes Engine: Googleが管理するKubernetesクラスタを使用して、コンテナオーケストレーションを実施。1つのAutopilotまたはゾーンクラスタが月々無料。
-App Engine: スケーラブルなウェブアプリケーションとモバイルバックエンドを構築するプラットフォーム。28インスタンス時間が日々無料。
-Cloud Run: ステートレスコンテナを実行するフルマネージド環境。月々200万リクエストが無料。
-Cloud Build: 高速で一貫した信頼性の高いビルドをGoogle Cloudで実行。日々120ビルド分が無料。
-Operations (旧称 Stackdriver): Google Cloud上のアプリケーションのモニタリング、ロギング、診断。ロギングとモニタリングのための月々の割り当てがあります。
-Firestore: アプリのデータを簡単に保存、同期、照会できるNoSQLドキュメントデータベース。1 GBのストレージが無料。
-Pub/Sub: リアルタイムで信頼性の高いメッセージングとデータのストリーミングを実現するグローバルサービス。月々10 GBのメッセージが無料。
-Cloud Functions: コードによるクラウドサービスの作成と接続が可能なサーバーレス環境。月々200万回の呼び出しが無料。
-Vision AI: ラベル検出、OCR、顔検出など多数の機能を提供。月々1,000ユニットが無料。
-Speech-to-Text: Google独自のプロダクトにも採用されている音声文字変換。月々60分が無料。
-Natural Language API: Googleの機械学習を使用して非構造化テキストから分析情報を引き出す。月々5,000ユニットが無料。
-AutoML Tables: 構造化データに基づきMLモデルをビルドしてデプロイ。トレーニングとバッチ予測向けにそれぞれ6ノード時間が無料。
-AutoML Natural Language: カスタムMLモデルをトレーニングして、コンテンツを分類。最初の5,000件のテキストレコードと1,000ページのドキュメントページが無料。
-AutoML Translation: 翻訳クエリ用のカスタムMLモデルを作成。月々50万文字の翻訳が無料。
-Video Intelligence API: 保存された動画とストリーミング動画内の物体、場所、アクションを認識する、事前トレーニングされたMLモデル。月々1,000ユニットが無料。
-AutoML Vision: カスタムMLモデルをトレーニングして、画像を一連の独自カテゴリに分類。40ノード時間のトレーニングとオンライン予測が無料。
-AutoML Video: カスタムMLモデルをトレーニングして、動画を分類。40ノード時間のトレーニングが無料。
-Workflows: Google Cloud や HTTP API でサービス呼び出しのフルマネージドシーケンスを実行。月々5,000の内部ステップが無料。
-Cloud Source Repositories: Google CloudがホストするさまざまなプライベートGitリポジトリ。最大5ユーザーが無料で利用可能。
-Secret Manager: APIキー、パスワード、証明書、その他の機密データを安全に保存。月々6つのシークレットバージョンが無料。
+AIとMLカテゴリには以下のサービスが含まれています。詳細な説明とリンクも含めています。
+@@ データ サイエンティスト向け AI
+Vertex AI : ML モデルをトレーニング、ホスト、管理するための統合プラットフォーム。 https://cloud.google.com/vertex-ai?hl=ja
+Vertex AI Workbench : データ、分析、ML のワークフローを 1 か所にまとめたインターフェース。 https://cloud.google.com/vertex-ai/workbench?hl=ja
+Vertex Explainable AI : ML モデルを理解して解釈するためのツールとフレームワーク。 https://cloud.google.com/vertex-ai/explainable-ai?hl=ja
+@@ デベロッパー向け AI
+AutoML : カスタム ML モデルのトレーニングと開発。 https://cloud.google.com/automl?hl=ja
+Dialogflow : 仮想エージェント向けの会話アプリケーションとシステム開発スイート。 https://cloud.google.com/dialogflow?hl=ja
+Media Translation : 動的な音声翻訳をコンテンツとアプリケーションに直接追加。 https://cloud.google.com/media-translation?hl=ja
+Natural Language AI : 非構造化テキストの感情分析と分類。 https://cloud.google.com/natural-language?hl=ja
+Recommendations AI : 高度にパーソナライズされたおすすめ商品情報を幅広く提供。 https://cloud.google.com/recommendations?hl=ja
+Speech-to-Text : 125 言語に対応した音声認識と音声文字変換。 https://cloud.google.com/speech-to-text?hl=ja
+Text-to-Speech : 220 以上の音声と 40 以上の言語で音声を合成。 https://cloud.google.com/text-to-speech?hl=ja
+Translation AI : 言語の検出、翻訳、用語集のサポート。 https://cloud.google.com/translate?hl=ja
+Video AI : ML を使用した動画分類と認識。 https://cloud.google.com/video-intelligence?hl=ja
+Vision AI : 感情やテキストなどを検出するためのカスタムモデルと事前トレーニング済みモデル。 https://cloud.google.com/vision?hl=ja
+@ API 管理
+Apigee API 管理 : API の管理、開発、セキュリティのためのプラットフォーム。 https://cloud.google.com/apigee?hl=ja
+Apigee Integration : 既存のデータとアプリケーションを接続するための API ファーストの統合。 https://cloud.google.com/apigee?hl=ja
+Apigee ハイブリッド : API をオンプレミスまたはクラウドで管理するためのデプロイ オプション。 https://cloud.google.com/apigee?hl=ja
+AppSheet Automation : コーディング不要の自動化によって時間と人材を有効活用。 https://cloud.google.com/appsheet?hl=ja
+AppSheet : 組織内の誰でも、コードなしでアプリケーションを構築、拡張可能。 https://cloud.google.com/appsheet?hl=ja
+Apigee Open Banking APIx : Open Banking と PSD2 準拠の API を提供。 https://cloud.google.com/apigee?hl=ja
+Apigee Sense : API を攻撃から守るインテリジェントな挙動検出。 https://cloud.google.com/apigee?hl=ja
+HealthAPIx : FHIR API ベースのデジタル サービスを形成。 https://cloud.google.com/healthcare?hl=ja
+Cloud Healthcare API : 既存の医療システムと Google Cloud のアプリを結びつけるためのソリューション。 https://cloud.google.com/healthcare?hl=ja
+API Gateway : フルマネージド ゲートウェイを使用して API を開発、デプロイ、保護、管理。 https://cloud.google.com/api-gateway?hl=ja
+Application Integration : コードなしでアプリケーションを視覚的に接続。 https://cloud.google.com/appsheet?hl=ja
+@ コンピューティング カテゴリ内のサービスとその説明は以下の通りです：
+App Engine : サーバーレス アプリケーション プラットフォーム。アプリとバックエンド用。 https://cloud.google.com/appengine?hl=ja
+Bare Metal Solution : Google Cloud 上で特殊なワークロードを実行するためのインフラストラクチャ。 https://cloud.google.com/bare-metal?hl=ja
+Batch : 大規模なバッチジョブをスケジュールし、キューに入れて実行するフルマネージド バッチサービス。 https://cloud.google.com/batch?hl=ja
+Cloud GPU : ML、科学技術計算、3D 描画処理に特化した GPU。 https://cloud.google.com/gpu?hl=ja
+Cloud Run : コンテナ化アプリを実行するためのフルマネージド環境。 https://cloud.google.com/run?hl=ja
+Compute Engine : Google のデータセンター内で稼働する仮想マシン。 https://cloud.google.com/compute?hl=ja
+Migrate to Virtual Machines : サーバーと仮想マシンを Compute Engine へ移行。 https://cloud.google.com/migrate/compute-engine?hl=ja
+Spot VM : バッチジョブやフォールト トレラントなワークロード向けのコンピューティング インスタンス。 https://cloud.google.com/spot?hl=ja
+Recommender : クラウドを最適な状態に保つための、プロアクティブで容易に実行可能な推奨事項を提示。 https://cloud.google.com/recommender?hl=ja
+Shielded VM : Google Cloud 上のセキュリティが強化された仮想マシン。 https://cloud.google.com/shielded-vm?hl=ja
+@ コンテナ カテゴリ内のサービスに関する情報は以下の通りです：
+Artifact Registry : コンテナ イメージと言語パッケージを保存、管理、保護するサービス。 詳細URL
+Cloud Build : Docker コンテナでビルドステップを実行するためのサービス。 詳細URL
+Cloud Deploy : GKE と Cloud Run に対するフルマネージドの継続的デリバリー。 詳細URL
+Cloud Run : コンテナ化アプリを実行するためのフルマネージド環境。 詳細URL
+コンテナ セキュリティ : ライフサイクルの各段階でのコンテナ環境のセキュリティ。 詳細URL
+Deep Learning Containers : データ サイエンス フレームワーク、ライブラリ、ツールを使ったコンテナ。 詳細URL
+Google Kubernetes Engine（GKE） : コンテナ化アプリを実行するためのマネージド環境。 詳細URL
+Knative : Kubernetes ネイティブのクラウドベース ソフトウェアを作成するためのコンポーネント。 詳細URL
+Google Cloud Marketplace の Kubernetes アプリケーション : 事前に構築されたデプロイ テンプレートを備え、統合請求の機能が組み込まれているコンテナ化アプリ。 詳細URL
