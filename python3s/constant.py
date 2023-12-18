@@ -1,7 +1,7 @@
 from typing import Any, T, Type
 
 
-def makereadonly(srccls: Type[T]) -> T:
+def ezconst(srccls: Type[T]) -> T:
     class _(srccls):
         def __setattr__(self, __name: str, __value: Any):
             ...
@@ -9,7 +9,7 @@ def makereadonly(srccls: Type[T]) -> T:
     return _()
 
 
-@makereadonly
+@ezconst
 class constantit:
     ONE=1
     TWO=2
