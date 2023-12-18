@@ -19,3 +19,4 @@ if __name__ == "__main__":
     print(constantit.ONE) # 1
     constantit.ONE=3
     print(constantit.ONE) # 1
+    print(type(constantit).__mro__)
