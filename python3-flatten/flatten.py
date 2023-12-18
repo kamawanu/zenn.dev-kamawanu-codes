@@ -17,3 +17,9 @@ def iterflatten(src: Iterable[Any | Iterable]) -> Iterable:
 
 def flatten(src: Iterable[Any | Iterable]) -> tuple:
     return tuple(iterflatten(src))
+
+
+if __name__ == "__main__":
+    src = [[1, 2, [3, 4]], [5, [6, 7],"8"]]
+    print(src)
+    print(flatten(src))
