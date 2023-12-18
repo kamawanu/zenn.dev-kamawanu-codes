@@ -16,6 +16,6 @@ class constantit:
 
 if __name__ == "__main__":
     print(constantit)
-    print(constantit.ONE)
+    print(constantit.ONE) # 1
     constantit.ONE=3
-    print(constantit.TWO)
+    print(constantit.ONE) # 1
