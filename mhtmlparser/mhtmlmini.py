@@ -2,7 +2,7 @@
 
 
 from io import TextIOWrapper
-from typing import Dict, List, Union
+from typing import Dict, List, Union, Optional
 import re
 from email.header import decode_header
 import base64
@@ -12,6 +12,9 @@ from functools import lru_cache
 
 
 class parametersets:
+    """
+    parameter sets
+    """
     _src: str
     main: str
     modifiers: Dict[str, str]
@@ -34,7 +37,10 @@ class parametersets:
         return self.main
 
 
-class discretemedia:
+class anypart:
+    """
+    discrete media
+    """
     _rawheader: Dict[str, str]
     _rawbody: List[str]
     content_type: parametersets
@@ -64,12 +70,12 @@ class discretemedia:
         if "subject" in self._rawheader:
             self.subject_decoded = subjectdecode(self._rawheader["subject"])
 
-    def has_boundary(self):
+    def has_boundary(self)->Optional[str]:
         # assert "boundary" in self.header["content-type"].modifiers, self.header["content-type"].modifiers
         return self.content_type.modifiers["boundary"]
 
     @property
-    def content_location(self):
+    def content_location(self) -> Optional[str]:
         return self._rawheader.get("content-location")
 
     def get_payload(self):
@@ -100,11 +106,14 @@ def subjectdecode(qp_subject_header: str) -> str:
     return decoded_str
 
 
-class compositemedia:
+class multipartholder:
+    """
+    composite media
+    """
     @property
-    def toppart(self):
+    def toppart(self) -> anypart:
         return self.subparts[0]
-    subparts: List[discretemedia]
+    subparts: List[anypart]
     boundary = None
     _snapshotlocation = None
     _homefileptr = None
@@ -113,7 +122,7 @@ class compositemedia:
         self.subparts = []
         # self.main = None
 
-    def add(self, part: discretemedia):
+    def add(self, part: anypart):
         if len(self.subparts) == 0:
             self.boundary = part.has_boundary()
             self._snapshotlocation = part._rawheader["snapshot-content-location"]
@@ -123,23 +132,23 @@ class compositemedia:
         self.subparts.append(part)
 
     @property
-    def lastpart(self):
+    def lastpart(self) -> anypart:
         if len(self.subparts) == 0:
             return self.toppart
         return self.subparts[-1]
 
     @property
-    def homeurl(self):
+    def homeurl(self) -> Optional[str] :
         return self._snapshotlocation
 
-    def gethome(self) -> discretemedia:
+    def gethome(self) -> anypart:
         # breakpoint()
         if self._homefileptr is None:
           return None
         return self.subparts[self._homefileptr]
 
     @classmethod
-    def from_file(cls, fn: Union[str,TextIOWrapper]) -> "compositemedia":
+    def from_file(cls, fn: Union[str,TextIOWrapper]) -> "multipartholder":
         if isinstance(fn,str):
             fp = open(fn)
         mparts = cls()
@@ -151,7 +160,7 @@ class compositemedia:
                 if buf == "":
                     # breakpoint()
                     mparts.add(
-                        discretemedia(pendingheaders)
+                        anypart(pendingheaders)
                     )
                     boundary = mparts.boundary
                     pendingheaders = None
@@ -172,21 +181,23 @@ class compositemedia:
         return mparts
 
 def from_file(fn):
-    return compositemedia.from_file(fn)
+    return multipartholder.from_file(fn)
 
 if __name__ == "__main__":
-    import glob
-    lst = glob.glob("*.mht")
-    zzzz = from_file(open(lst[0]))
+    import glob, sys
+    lst = sys.argv[1:] or glob.glob("*.mht")
+    mhtml = from_file(lst[0])
     # print(zzzz)
     # pprint.pprint(zzzz.parts)
-    print(zzzz.toppart.subject_decoded)
-    print(zzzz.toppart._rawheader["snapshot-content-location"])
+    print(mhtml.toppart.subject_decoded)
+    print(mhtml.toppart._rawheader["snapshot-content-location"])
     print([
-        (xx.content_type.main) for xx in zzzz.subparts]
+        (xx.content_type.main) for xx in mhtml.subparts]
     )
-    print(zzzz.gethome().get_payload())
-    for yyy in zzzz.subparts:
+    print(mhtml.gethome().get_payload())
+    for yyy in mhtml.subparts:
         if yyy.content_type.main.split("/")[0] == "image":
             img = yyy.get_payload()
-            open(os.path.basename(yyy.content_location), "wb").write(img)
+            ##breakpoint()
+            if type(img) == bytes:
+                open(os.path.basename(yyy.content_location), "wb").write(img)
