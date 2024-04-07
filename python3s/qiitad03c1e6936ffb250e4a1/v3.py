@@ -1,17 +1,17 @@
 from v0 import Validator
 
 
-def validate_by(func):
+def mixin_validator_of(func:callable) -> type:
     class _:
         _validator_ = func
     return _
 
 
-class User(validate_by(Validator.validate_user)):
+class User(mixin_validator_of(Validator.validate_user)):
     pass
 
 
-class Article(validate_by(Validator.validate_article)):
+class Article(mixin_validator_of(Validator.validate_article)):
     pass
 
 def validate_obj(obj):

@@ -1,14 +1,14 @@
-from typing import Any
+from typing import Callable, Type, T, Dict
 from v0 import Validator
 
 
 class validateuserregistory:
-    map_: dict
+    map_: Dict[Type,Callable]
 
     def __init__(self) -> None:
         self.map_ = {}
 
-    def __call__(self, cls) -> Any:
+    def __call__(self, cls:Type[T]) -> Type[T]:
         func = getattr(Validator, f"validate_{cls.__name__.lower()}")
         self.map_.update({cls: func})
         return cls
@@ -17,20 +17,20 @@ class validateuserregistory:
         return self.map_[type(obj)](obj)
 
 
-can_validate = validateuserregistory()
+maybe_uses_validator = validateuserregistory()
 
 
-@can_validate
+@maybe_uses_validator
 class User:
     pass
 
 
-@can_validate
+@maybe_uses_validator
 class Article:
     pass
 
 
-validate_obj = can_validate.invoker
+validate_obj = maybe_uses_validator.invoker
 
 user = User()
 validate_obj(user)
