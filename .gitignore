@@ -3,3 +3,4 @@ package-lock.json
 .vscode/
 .pyc
 __pycache__/
+.venv/

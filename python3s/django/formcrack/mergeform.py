@@ -5,7 +5,7 @@ from django.forms import Form
 class mergeform(Form):
     _nested:List[Form] = None
 
-    def __init__(self, *args, nested, **kwargs):
+    def __init__(self, *args, nested:List[Form], **kwargs):
         self._nested = nested
         ###breakpoint()
         super().__init__(*args, **kwargs)
@@ -21,6 +21,7 @@ class mergeform(Form):
         for zz in self._nested:
             zz.data = self.data
             zz.is_bound = True
+            zz.cleaned_data = None
             zz.full_clean()
             if zz.is_valid():
                 zz._clean_form()
