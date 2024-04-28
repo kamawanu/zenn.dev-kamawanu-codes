@@ -8,6 +8,6 @@ class CommentForm(forms.Form):
 
 
 class HelpTextContactForm(forms.Form):
-    subject = forms.CharField(max_length=100, help_text="100 characters max.")
+    subject = forms.CharField(max_length=100)
     message = forms.CharField()
     #comment = forms.CharField()
