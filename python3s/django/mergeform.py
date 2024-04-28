@@ -11,10 +11,15 @@ class mergeform(Form):
         # breakpoint()
         super().__init__(*args, **kwargs)
         flds = {}
+        already = set()
         for zz in self._nested:
             zz.data = self.data
             zz.is_bound = True
+            duplicate = already & set(zz.base_fields.keys())
+            if len(duplicate) > 0:
+                raise TypeError(f"duplicate field {duplicate}")
             flds.update(zz.base_fields)
+            already |= zz.base_fields.keys()
         self.fields = flds
         self._errors = None
 
