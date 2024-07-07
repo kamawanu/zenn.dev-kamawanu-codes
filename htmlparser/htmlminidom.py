@@ -2,25 +2,28 @@
 
 from dataclasses import dataclass
 from html.parser import HTMLParser
-from typing import List, Dict
+from typing import Iterable, List, Dict, Protocol
 
 
-class finditeruser:
-    def find(self, tag):
+class canfind(Protocol):
+    def find(self, tag) -> Iterable:
         try:
             return self.finditer(tag).__next__()
         except StopIteration:
             return None
 
-    def findmust(self,tag):
+    def findmust(self,tag) -> Iterable:
         try:
             return self.finditer(tag).__next__()
         except StopIteration:
             raise TypeError(f"{self}.{tag} not found")
+        
+    def finditer(self,tag:str) -> Iterable:
+        ...
 
 
 @dataclass
-class htmldom(finditeruser):
+class htmldom(canfind):
     tag: str
     attrs: Dict[str, str]
     content: List["htmldom"]
@@ -29,27 +32,27 @@ class htmldom(finditeruser):
         if not type(self.attrs) is dict:
             self.attrs = dict(self.attrs)
 
-    def __getitem__(self, ii):
-        return self.content[ii]
+    def __getitem__(self, key:str):
+        return self.content[key]
 
-    def finditer(self, tag):
+    def finditer(self, tag) -> Iterable["htmldom"]:
         yield from finditerxi(self.content, tag)
 
 
-def flatten(root: List[htmldom]):
+def flatten(root: List[htmldom]) -> Iterable[htmldom]:
     for xx in root:
         yield xx
         if isinstance(xx, htmldom):
             yield from flatten(xx.content)
 
 
-def finditerxi(root: List[htmldom], tag):
+def finditerxi(root: List[htmldom], tag) -> Iterable[htmldom]:
     for xx in flatten(root):
         if isinstance(xx, htmldom) and xx.tag == tag:
             yield xx
 
 
-class tinyhtmlparser(HTMLParser,finditeruser):
+class tinyhtmlparser(HTMLParser,canfind):
     root: List[htmldom] = None
     _nest: List[List[htmldom]] = None
 
@@ -58,20 +61,24 @@ class tinyhtmlparser(HTMLParser,finditeruser):
         self._nest = [self.root,]
         super().__init__()
 
-    def finditer(self, tag):
+    def finditer(self, tag:str) -> Iterable[htmldom]:
         yield from finditerxi(self.root, tag)
 
-    lonelytags = ("meta","link","img")
+    closeoptiontags = (
+        "meta","link","img",
+        # http://xahlee.info/js/html5_non-closing_tag.html
+        "br", "hr", "area", "col", "param",
+    )
 
-    def handle_starttag(self, tag, attrs):
-        if tag in self.lonelytags:
-            if len(self._nest) > 2 and self._nest[-2][-1].tag in self.lonelytags:
+    def handle_starttag(self, tag:str, attrs:dict):
+        if tag in self.closeoptiontags:
+            if len(self._nest) > 2 and self._nest[-2][-1].tag in self.closeoptiontags:
                 self._nest.pop()
         # breakpoint()
         self._nest[-1].append(htmldom(tag, attrs, list()))
         self._nest.append(self._nest[-1][-1].content)
 
-    def handle_endtag(self, tag):
+    def handle_endtag(self, tag:str):
         while tag != self._nest[-2][-1].tag:
             self._nest.pop()
         assert tag == self._nest[-2][-1].tag
