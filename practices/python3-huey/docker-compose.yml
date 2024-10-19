@@ -5,6 +5,11 @@ services:
     image: redis:latest
     ports:
       - "6379:6379"
+  redis-monitor:
+    image: redis:7
+    command: redis-cli -h redis monitor
+    depends_on:
+      - redis
 
   app:
     build: .
