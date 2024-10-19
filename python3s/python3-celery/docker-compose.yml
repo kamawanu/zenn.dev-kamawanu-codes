@@ -1,0 +1,40 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+  worker:
+    build: ./app
+    command: celery -A celery worker --loglevel=info
+    volumes:
+      - ./app:/app
+    depends_on:
+      - redis
+
+  app:
+    build: ./app
+    command: python main.py
+    volumes:
+      - ./app:/app
+    depends_on:
+      - redis
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+  flower:
+    build: ./app
+    command: celery -A celery flower --port=5555
+    ports:
+      - "5555:5555"
+    depends_on:
+      - redis
+    volumes:
+      - ./app:/app
+volumes:
+  redis-data:
