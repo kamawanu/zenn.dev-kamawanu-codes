@@ -1,5 +1,4 @@
 # main.py
-from celery import Celery
 from tasks import add
 import time
 
