@@ -1,5 +1,5 @@
 # docker-compose.yml
-version: '3.8'
+# version: '3.8'
 
 services:
   redis:
@@ -11,7 +11,7 @@ services:
 
   worker:
     build: ./app
-    command: celery -A celery_app worker --loglevel=info  # ファイル名に合わせて変更
+    command: celery -A worker worker --loglevel=debug
     volumes:
       - ./app:/app
     depends_on:
