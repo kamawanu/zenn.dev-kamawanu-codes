@@ -8,6 +8,14 @@ services:
     #  - "6379:6379"
     volumes:
       - redis-data:/data
+  redis-monitor:
+    image: redis:7
+    #ports:
+    #  - "6379:6379"
+    #volumes:
+    #  - redis-data:/data
+    command: redis-cli monitor
+
 
   worker:
     build: ./app
@@ -25,9 +33,6 @@ services:
     depends_on:
       - redis
       - worker
-      # worker-1  | KeyError: 'tasks.add'
-      # worker-1  | [2024-10-19 10:59:00,000: ERROR/MainProcess] Received unregistered task of type 'tasks.add'.
-      # worker-1  | The message has been ignored and discarded.
     environment:
       - CELERY_BROKER_URL=redis://redis:6379/0
       - CELERY_RESULT_BACKEND=redis://redis:6379/0
