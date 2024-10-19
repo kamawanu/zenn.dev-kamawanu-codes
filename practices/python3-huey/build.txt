@@ -1,0 +1,41 @@
+#0 building with "default" instance using docker driver
+
+#1 [app internal] load build definition from Dockerfile
+#1 transferring dockerfile: 401B done
+#1 DONE 0.0s
+
+#2 [app internal] load metadata for docker.io/library/python:3.10-slim
+#2 DONE 0.8s
+
+#3 [app internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [app 1/5] FROM docker.io/library/python:3.10-slim@sha256:eb9ca77b1a0ffbde84c1dc333beb3490a2638813cc25a339f8575668855b9ff1
+#4 DONE 0.0s
+
+#5 [app internal] load build context
+#5 transferring context: 1.39kB done
+#5 DONE 0.0s
+
+#6 [app 2/5] WORKDIR /app
+#6 CACHED
+
+#7 [app 3/5] COPY requirements.txt .
+#7 CACHED
+
+#8 [app 4/5] RUN pip install --no-cache-dir -r requirements.txt
+#8 CACHED
+
+#9 [app 5/5] COPY . .
+#9 DONE 0.1s
+
+#10 [app] exporting to image
+#10 exporting layers
+#10 exporting layers 0.7s done
+#10 writing image sha256:9ea2b7a704e8162859e54a82982799cc34c732c65f1e54b929cd5f8054abd0e0 done
+#10 naming to docker.io/library/python3-huey-app done
+#10 DONE 0.8s
+
+#11 [app] resolving provenance for metadata file
+#11 DONE 0.0s

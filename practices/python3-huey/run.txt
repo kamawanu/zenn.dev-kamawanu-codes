@@ -1,0 +1,23 @@
+Attaching to app-1, redis-1, redis-monitor-1
+redis-1          | 1:C 19 Oct 2024 23:04:44.505 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+redis-1          | 1:C 19 Oct 2024 23:04:44.505 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+redis-1          | 1:C 19 Oct 2024 23:04:44.505 * Redis version=7.4.1, bits=64, commit=00000000, modified=0, pid=1, just started
+redis-1          | 1:C 19 Oct 2024 23:04:44.505 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+redis-1          | 1:M 19 Oct 2024 23:04:44.505 * monotonic clock: POSIX clock_gettime
+redis-1          | 1:M 19 Oct 2024 23:04:44.506 * Running mode=standalone, port=6379.
+redis-1          | 1:M 19 Oct 2024 23:04:44.507 * Server initialized
+redis-1          | 1:M 19 Oct 2024 23:04:44.507 * Loading RDB produced by version 7.4.1
+redis-1          | 1:M 19 Oct 2024 23:04:44.507 * RDB age 25552 seconds
+redis-1          | 1:M 19 Oct 2024 23:04:44.507 * RDB memory usage when created 0.95 Mb
+redis-1          | 1:M 19 Oct 2024 23:04:44.507 * Done loading RDB, keys loaded: 1, keys expired: 0.
+redis-1          | 1:M 19 Oct 2024 23:04:44.507 * DB loaded from disk: 0.000 seconds
+redis-1          | 1:M 19 Oct 2024 23:04:44.507 * Ready to accept connections tcp
+redis-monitor-1  | OK
+redis-monitor-1  | 1729379084.923962 [0 172.19.0.3:44238] "LPUSH" "huey.redis.myapp" "\x80\x05\x95j\x00\x00\x00\x00\x00\x00\x00\x8c\rhuey.registry\x94\x8c\aMessage\x94\x93\x94(\x8c$e88a2a74-9f30-41e5-a68d-724d2ce4c2d7\x94\x8c\x0c__main__.add\x94NK\x00K\x00NK\x03K\x04\x86\x94}\x94NNNNt\x94\x81\x94."
+redis-monitor-1  | 1729379084.924292 [0 172.19.0.3:44238] "LPUSH" "huey.redis.myapp" "\x80\x05\x95j\x00\x00\x00\x00\x00\x00\x00\x8c\rhuey.registry\x94\x8c\aMessage\x94\x93\x94(\x8c$360a5cdf-401d-4966-86fe-923b04df9aaf\x94\x8c\x0c__main__.add\x94NK\x00K\x00NK\x03K\b\x86\x94}\x94NNNNt\x94\x81\x94."
+app-1            | 1
+app-1            | Task enqueued, result: <Result: task e88a2a74-9f30-41e5-a68d-724d2ce4c2d7>
+app-1            | Task enqueued, result: {'huey': <huey.api.RedisHuey object at 0x7f0b11537f40>, 'task': __main__.add: e88a2a74-9f30-41e5-a68d-724d2ce4c2d7, 'revoke_id': 'r:e88a2a74-9f30-41e5-a68d-724d2ce4c2d7', '_result': <class 'huey.constants.EmptyData'>}
+app-1            | Task enqueued, result: <Result: task 360a5cdf-401d-4966-86fe-923b04df9aaf>
+app-1            | Task enqueued, result: {'huey': <huey.api.RedisHuey object at 0x7f0b11537f40>, 'task': __main__.add: 360a5cdf-401d-4966-86fe-923b04df9aaf, 'revoke_id': 'r:360a5cdf-401d-4966-86fe-923b04df9aaf', '_result': <class 'huey.constants.EmptyData'>}
+[Kapp-1 exited with code 0

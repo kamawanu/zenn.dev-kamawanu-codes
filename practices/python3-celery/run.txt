@@ -1,0 +1,149 @@
+Attaching to app-1, redis-1, redis-monitor-1, worker-1
+redis-1          | 1:C 19 Oct 2024 23:04:11.816 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+redis-1          | 1:C 19 Oct 2024 23:04:11.816 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+redis-1          | 1:C 19 Oct 2024 23:04:11.816 * Redis version=7.4.1, bits=64, commit=00000000, modified=0, pid=1, just started
+redis-1          | 1:C 19 Oct 2024 23:04:11.816 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+redis-1          | 1:M 19 Oct 2024 23:04:11.816 * monotonic clock: POSIX clock_gettime
+redis-1          | 1:M 19 Oct 2024 23:04:11.817 * Running mode=standalone, port=6379.
+redis-1          | 1:M 19 Oct 2024 23:04:11.817 * Server initialized
+redis-1          | 1:M 19 Oct 2024 23:04:11.817 * Loading RDB produced by version 7.4.1
+redis-1          | 1:M 19 Oct 2024 23:04:11.817 * RDB age 73 seconds
+redis-1          | 1:M 19 Oct 2024 23:04:11.817 * RDB memory usage when created 1.47 Mb
+redis-1          | 1:M 19 Oct 2024 23:04:11.817 * Done loading RDB, keys loaded: 10, keys expired: 0.
+redis-1          | 1:M 19 Oct 2024 23:04:11.817 * DB loaded from disk: 0.000 seconds
+redis-1          | 1:M 19 Oct 2024 23:04:11.817 * Ready to accept connections tcp
+redis-monitor-1  | OK
+worker-1         |  
+worker-1         |  -------------- celery@4eb25f71c4b4 v5.2.7 (dawn-chorus)
+worker-1         | --- ***** ----- 
+worker-1         | -- ******* ---- Linux-6.6.44-1-MANJARO-x86_64-with-glibc2.36 2024-10-19 23:04:12
+worker-1         | - *** --- * --- 
+worker-1         | - ** ---------- [config]
+worker-1         | - ** ---------- .> app:         celery_demo:0x7f5341b08b80
+worker-1         | - ** ---------- .> transport:   redis://redis:6379/0
+worker-1         | - ** ---------- .> results:     redis://redis:6379/0
+worker-1         | - *** --- * --- .> concurrency: 8 (prefork)
+worker-1         | -- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+worker-1         | --- ***** ----- 
+worker-1         |  -------------- [queues]
+worker-1         |                 .> celery           exchange=celery(direct) key=celery
+worker-1         |                 
+worker-1         | 
+worker-1         | [tasks]
+worker-1         |   . celery.accumulate
+worker-1         |   . celery.backend_cleanup
+worker-1         |   . celery.chain
+worker-1         |   . celery.chord
+worker-1         |   . celery.chord_unlock
+worker-1         |   . celery.chunks
+worker-1         |   . celery.group
+worker-1         |   . celery.map
+worker-1         |   . celery.starmap
+worker-1         |   . tasks.add
+worker-1         | 
+redis-monitor-1  | 1729379052.494538 [0 172.18.0.5:44478] "SUBSCRIBE" "celery-task-meta-f9ecc335-02d9-4c22-bd3b-9a630707ebf7"
+redis-monitor-1  | 1729379052.497541 [0 172.18.0.5:44488] "PING"
+redis-monitor-1  | 1729379052.497653 [0 172.18.0.5:44488] "PING"
+redis-monitor-1  | 1729379052.498819 [0 172.18.0.5:44494] "PING"
+redis-monitor-1  | 1729379052.498907 [0 172.18.0.5:44494] "MULTI"
+redis-monitor-1  | 1729379052.498921 [0 172.18.0.5:44494] "LLEN" "celery"
+redis-monitor-1  | 1729379052.498925 [0 172.18.0.5:44494] "LLEN" "celery\x06\x163"
+redis-monitor-1  | 1729379052.498929 [0 172.18.0.5:44494] "LLEN" "celery\x06\x166"
+redis-monitor-1  | 1729379052.498931 [0 172.18.0.5:44494] "LLEN" "celery\x06\x169"
+redis-monitor-1  | 1729379052.498933 [0 172.18.0.5:44494] "EXEC"
+redis-monitor-1  | 1729379052.499405 [0 172.18.0.5:44494] "SADD" "_kombu.binding.celery" "celery\x06\x16\x06\x16celery"
+redis-monitor-1  | 1729379052.499886 [0 172.18.0.5:44494] "LPUSH" "celery" "{\"body\": \"W1sxMCwgMjBdLCB7fSwgeyJjYWxsYmFja3MiOiBudWxsLCAiZXJyYmFja3MiOiBudWxsLCAiY2hhaW4iOiBudWxsLCAiY2hvcmQiOiBudWxsfV0=\", \"content-encoding\": \"utf-8\", \"content-type\": \"application/json\", \"headers\": {\"lang\": \"py\", \"task\": \"tasks.add\", \"id\": \"f9ecc335-02d9-4c22-bd3b-9a630707ebf7\", \"shadow\": null, \"eta\": null, \"expires\": null, \"group\": null, \"group_index\": null, \"retries\": 0, \"timelimit\": [null, null], \"root_id\": \"f9ecc335-02d9-4c22-bd3b-9a630707ebf7\", \"parent_id\": null, \"argsrepr\": \"(10, 20)\", \"kwargsrepr\": \"{}\", \"origin\": \"gen1@e6cb564f215c\", \"ignore_result\": false}, \"properties\": {\"correlation_id\": \"f9ecc335-02d9-4c22-bd3b-9a630707ebf7\", \"reply_to\": \"a8a3f994-2846-3e24-bce4-51893a9d87d2\", \"delivery_mode\": 2, \"delivery_info\": {\"exchange\": \"\", \"routing_key\": \"celery\"}, \"priority\": 0, \"body_encoding\": \"base64\", \"delivery_tag\": \"4dce8220-1361-45db-8ebc-3e89fcef6bac\"}}"
+redis-monitor-1  | 1729379052.500564 [0 172.18.0.5:44498] "GET" "celery-task-meta-f9ecc335-02d9-4c22-bd3b-9a630707ebf7"
+redis-monitor-1  | 1729379052.554304 [0 172.18.0.4:44106] "PING"
+redis-monitor-1  | 1729379052.554433 [0 172.18.0.4:44106] "PING"
+redis-monitor-1  | 1729379052.555861 [0 172.18.0.4:44116] "PING"
+redis-monitor-1  | 1729379052.556012 [0 172.18.0.4:44116] "SET" "unacked_mutex" "7499ba808e6e11efa2970242ac120004" "PX" "300000" "NX"
+redis-monitor-1  | 1729379052.556208 [0 172.18.0.4:44116] "ZREVRANGEBYSCORE" "unacked_index" "1729375452.5550501" "0" "WITHSCORES"
+redis-monitor-1  | 1729379052.556433 [0 172.18.0.4:44116] "EVALSHA" "c3f8721cbb97f72bc19e972846bd7aaf91901658" "1" "unacked_mutex" "7499ba808e6e11efa2970242ac120004"
+redis-monitor-1  | 1729379052.556601 [0 172.18.0.4:44116] "SCRIPT" "LOAD" "\n        local token = redis.call('get', KEYS[1])\n        if not token or token ~= ARGV[1] then\n            return 0\n        end\n        redis.call('del', KEYS[1])\n        return 1\n    "
+redis-monitor-1  | 1729379052.556739 [0 172.18.0.4:44116] "EVALSHA" "c3f8721cbb97f72bc19e972846bd7aaf91901658" "1" "unacked_mutex" "7499ba808e6e11efa2970242ac120004"
+redis-monitor-1  | 1729379052.556752 [0 lua] "get" "unacked_mutex"
+redis-monitor-1  | 1729379052.556757 [0 lua] "del" "unacked_mutex"
+redis-monitor-1  | 1729379052.558283 [0 172.18.0.4:44126] "PING"
+redis-monitor-1  | 1729379052.558349 [0 172.18.0.4:44126] "PING"
+redis-monitor-1  | 1729379052.559539 [0 172.18.0.4:44116] "MULTI"
+redis-monitor-1  | 1729379052.559547 [0 172.18.0.4:44116] "LLEN" "eff20390-6645-3deb-9523-7c9abf924a60.reply.celery.pidbox"
+redis-monitor-1  | 1729379052.559550 [0 172.18.0.4:44116] "LLEN" "eff20390-6645-3deb-9523-7c9abf924a60.reply.celery.pidbox\x06\x163"
+redis-monitor-1  | 1729379052.559552 [0 172.18.0.4:44116] "LLEN" "eff20390-6645-3deb-9523-7c9abf924a60.reply.celery.pidbox\x06\x166"
+redis-monitor-1  | 1729379052.559554 [0 172.18.0.4:44116] "LLEN" "eff20390-6645-3deb-9523-7c9abf924a60.reply.celery.pidbox\x06\x169"
+redis-monitor-1  | 1729379052.559556 [0 172.18.0.4:44116] "EXEC"
+redis-monitor-1  | 1729379052.559900 [0 172.18.0.4:44116] "SADD" "_kombu.binding.reply.celery.pidbox" "eff20390-6645-3deb-9523-7c9abf924a60\x06\x16\x06\x16eff20390-6645-3deb-9523-7c9abf924a60.reply.celery.pidbox"
+redis-monitor-1  | 1729379052.561625 [0 172.18.0.4:44136] "PING"
+redis-monitor-1  | 1729379052.561687 [0 172.18.0.4:44136] "PING"
+redis-monitor-1  | 1729379052.562647 [0 172.18.0.4:44142] "PING"
+redis-monitor-1  | 1729379052.562740 [0 172.18.0.4:44142] "PUBLISH" "/0.celery.pidbox" "{\"body\": \"eyJtZXRob2QiOiAiaGVsbG8iLCAiYXJndW1lbnRzIjogeyJmcm9tX25vZGUiOiAiY2VsZXJ5QDRlYjI1ZjcxYzRiNCIsICJyZXZva2VkIjoge319LCAiZGVzdGluYXRpb24iOiBudWxsLCAicGF0dGVybiI6IG51bGwsICJtYXRjaGVyIjogbnVsbCwgInRpY2tldCI6ICIzMjYxYzhjNi1iMDMwLTQ5N2UtODI3NC1lYmIzMjZkYTRkYTMiLCAicmVwbHlfdG8iOiB7ImV4Y2hhbmdlIjogInJlcGx5LmNlbGVyeS5waWRib3giLCAicm91dGluZ19rZXkiOiAiZWZmMjAzOTAtNjY0NS0zZGViLTk1MjMtN2M5YWJmOTI0YTYwIn19\", \"content-encoding\": \"utf-8\", \"content-type\": \"application/json\", \"headers\": {\"clock\": 1, \"expires\": 1729379053.5606964}, \"properties\": {\"delivery_mode\": 2, \"delivery_info\": {\"exchange\": \"celery.pidbox\", \"routing_key\": \"\"}, \"priority\": 0, \"body_encoding\": \"base64\", \"delivery_tag\": \"5724231e-c71b-46d5-94f4-01df1a47e93f\"}}"
+redis-monitor-1  | 1729379052.563248 [0 172.18.0.4:44116] "MULTI"
+redis-monitor-1  | 1729379052.563255 [0 172.18.0.4:44116] "LLEN" "eff20390-6645-3deb-9523-7c9abf924a60.reply.celery.pidbox"
+redis-monitor-1  | 1729379052.563257 [0 172.18.0.4:44116] "LLEN" "eff20390-6645-3deb-9523-7c9abf924a60.reply.celery.pidbox\x06\x163"
+redis-monitor-1  | 1729379052.563260 [0 172.18.0.4:44116] "LLEN" "eff20390-6645-3deb-9523-7c9abf924a60.reply.celery.pidbox\x06\x166"
+redis-monitor-1  | 1729379052.563261 [0 172.18.0.4:44116] "LLEN" "eff20390-6645-3deb-9523-7c9abf924a60.reply.celery.pidbox\x06\x169"
+redis-monitor-1  | 1729379052.563263 [0 172.18.0.4:44116] "EXEC"
+redis-monitor-1  | 1729379052.563599 [0 172.18.0.4:44106] "BRPOP" "eff20390-6645-3deb-9523-7c9abf924a60.reply.celery.pidbox" "eff20390-6645-3deb-9523-7c9abf924a60.reply.celery.pidbox\x06\x163" "eff20390-6645-3deb-9523-7c9abf924a60.reply.celery.pidbox\x06\x166" "eff20390-6645-3deb-9523-7c9abf924a60.reply.celery.pidbox\x06\x169" "1"
+redis-monitor-1  | 1729379053.501918 [0 172.18.0.5:44498] "GET" "celery-task-meta-f9ecc335-02d9-4c22-bd3b-9a630707ebf7"
+redis-monitor-1  | 1729379053.565029 [0 172.18.0.4:44116] "SREM" "_kombu.binding.reply.celery.pidbox" "eff20390-6645-3deb-9523-7c9abf924a60\x06\x16\x06\x16eff20390-6645-3deb-9523-7c9abf924a60.reply.celery.pidbox"
+redis-monitor-1  | 1729379053.565374 [0 172.18.0.4:44116] "MULTI"
+redis-monitor-1  | 1729379053.565396 [0 172.18.0.4:44116] "DEL" "eff20390-6645-3deb-9523-7c9abf924a60.reply.celery.pidbox"
+redis-monitor-1  | 1729379053.565400 [0 172.18.0.4:44116] "DEL" "eff20390-6645-3deb-9523-7c9abf924a60.reply.celery.pidbox\x06\x163"
+redis-monitor-1  | 1729379053.565416 [0 172.18.0.4:44116] "DEL" "eff20390-6645-3deb-9523-7c9abf924a60.reply.celery.pidbox\x06\x166"
+redis-monitor-1  | 1729379053.565420 [0 172.18.0.4:44116] "DEL" "eff20390-6645-3deb-9523-7c9abf924a60.reply.celery.pidbox\x06\x169"
+redis-monitor-1  | 1729379053.565423 [0 172.18.0.4:44116] "EXEC"
+redis-monitor-1  | 1729379053.567755 [0 172.18.0.4:44116] "MULTI"
+redis-monitor-1  | 1729379053.567766 [0 172.18.0.4:44116] "LLEN" "celery"
+redis-monitor-1  | 1729379053.567768 [0 172.18.0.4:44116] "LLEN" "celery\x06\x163"
+redis-monitor-1  | 1729379053.567771 [0 172.18.0.4:44116] "LLEN" "celery\x06\x166"
+redis-monitor-1  | 1729379053.567773 [0 172.18.0.4:44116] "LLEN" "celery\x06\x169"
+redis-monitor-1  | 1729379053.567775 [0 172.18.0.4:44116] "EXEC"
+redis-monitor-1  | 1729379053.568147 [0 172.18.0.4:44116] "SADD" "_kombu.binding.celery" "celery\x06\x16\x06\x16celery"
+redis-monitor-1  | 1729379053.569312 [0 172.18.0.4:44154] "PING"
+redis-monitor-1  | 1729379053.569411 [0 172.18.0.4:44154] "PING"
+redis-monitor-1  | 1729379053.570357 [0 172.18.0.4:44162] "PING"
+redis-monitor-1  | 1729379053.570438 [0 172.18.0.4:44162] "MULTI"
+redis-monitor-1  | 1729379053.570447 [0 172.18.0.4:44162] "LLEN" "celery@4eb25f71c4b4.celery.pidbox"
+redis-monitor-1  | 1729379053.570450 [0 172.18.0.4:44162] "LLEN" "celery@4eb25f71c4b4.celery.pidbox\x06\x163"
+redis-monitor-1  | 1729379053.570454 [0 172.18.0.4:44162] "LLEN" "celery@4eb25f71c4b4.celery.pidbox\x06\x166"
+redis-monitor-1  | 1729379053.570457 [0 172.18.0.4:44162] "LLEN" "celery@4eb25f71c4b4.celery.pidbox\x06\x169"
+redis-monitor-1  | 1729379053.570460 [0 172.18.0.4:44162] "EXEC"
+redis-monitor-1  | 1729379053.570795 [0 172.18.0.4:44162] "SADD" "_kombu.binding.celery.pidbox" "\x06\x16\x06\x16celery@4eb25f71c4b4.celery.pidbox"
+redis-monitor-1  | 1729379053.571940 [0 172.18.0.4:44178] "PING"
+redis-monitor-1  | 1729379053.572050 [0 172.18.0.4:44178] "PUBLISH" "/0.celeryev/worker.online" "{\"body\": \"eyJob3N0bmFtZSI6ICJjZWxlcnlANGViMjVmNzFjNGI0IiwgInV0Y29mZnNldCI6IDAsICJwaWQiOiAxLCAiY2xvY2siOiAxLCAiZnJlcSI6IDIuMCwgImFjdGl2ZSI6IDAsICJwcm9jZXNzZWQiOiAwLCAibG9hZGF2ZyI6IFsxLjI5LCAwLjg4LCAwLjc4XSwgInN3X2lkZW50IjogInB5LWNlbGVyeSIsICJzd192ZXIiOiAiNS4yLjciLCAic3dfc3lzIjogIkxpbnV4IiwgInRpbWVzdGFtcCI6IDE3MjkzNzkwNTMuNTcxMTE4OCwgInR5cGUiOiAid29ya2VyLW9ubGluZSJ9\", \"content-encoding\": \"utf-8\", \"content-type\": \"application/json\", \"headers\": {\"hostname\": \"celery@4eb25f71c4b4\"}, \"properties\": {\"delivery_mode\": 1, \"delivery_info\": {\"exchange\": \"celeryev\", \"routing_key\": \"worker.online\"}, \"priority\": 0, \"body_encoding\": \"base64\", \"delivery_tag\": \"a85203dd-7220-425f-be6b-b0dad2db957d\"}}"
+redis-monitor-1  | 1729379053.572969 [0 172.18.0.4:44190] "PING"
+redis-monitor-1  | 1729379053.573051 [0 172.18.0.4:44190] "PING"
+redis-monitor-1  | 1729379053.573949 [0 172.18.0.4:44194] "PING"
+redis-monitor-1  | 1729379053.574027 [0 172.18.0.4:44194] "MULTI"
+redis-monitor-1  | 1729379053.574035 [0 172.18.0.4:44194] "LLEN" "celeryev.11fd97ff-e5f6-4ff9-b293-47c0d94b7994"
+redis-monitor-1  | 1729379053.574038 [0 172.18.0.4:44194] "LLEN" "celeryev.11fd97ff-e5f6-4ff9-b293-47c0d94b7994\x06\x163"
+redis-monitor-1  | 1729379053.574042 [0 172.18.0.4:44194] "LLEN" "celeryev.11fd97ff-e5f6-4ff9-b293-47c0d94b7994\x06\x166"
+redis-monitor-1  | 1729379053.574045 [0 172.18.0.4:44194] "LLEN" "celeryev.11fd97ff-e5f6-4ff9-b293-47c0d94b7994\x06\x169"
+redis-monitor-1  | 1729379053.574048 [0 172.18.0.4:44194] "EXEC"
+redis-monitor-1  | 1729379053.574371 [0 172.18.0.4:44194] "SADD" "_kombu.binding.celeryev" "worker.#\x06\x16\x06\x16celeryev.11fd97ff-e5f6-4ff9-b293-47c0d94b7994"
+redis-monitor-1  | 1729379053.575592 [0 172.18.0.4:44154] "PSUBSCRIBE" "/0.celery.pidbox"
+redis-monitor-1  | 1729379053.575877 [0 172.18.0.4:44190] "PSUBSCRIBE" "/0.celeryev/worker.*"
+redis-monitor-1  | 1729379053.576339 [0 172.18.0.4:44106] "BRPOP" "celery" "celery\x06\x163" "celery\x06\x166" "celery\x06\x169" "1"
+redis-monitor-1  | 1729379053.576833 [0 172.18.0.4:44116] "MULTI"
+redis-monitor-1  | 1729379053.576847 [0 172.18.0.4:44116] "ZADD" "unacked_index" "1729379053.5765657" "4dce8220-1361-45db-8ebc-3e89fcef6bac"
+redis-monitor-1  | 1729379053.576863 [0 172.18.0.4:44116] "HSET" "unacked" "4dce8220-1361-45db-8ebc-3e89fcef6bac" "[{\"body\": \"W1sxMCwgMjBdLCB7fSwgeyJjYWxsYmFja3MiOiBudWxsLCAiZXJyYmFja3MiOiBudWxsLCAiY2hhaW4iOiBudWxsLCAiY2hvcmQiOiBudWxsfV0=\", \"content-encoding\": \"utf-8\", \"content-type\": \"application/json\", \"headers\": {\"lang\": \"py\", \"task\": \"tasks.add\", \"id\": \"f9ecc335-02d9-4c22-bd3b-9a630707ebf7\", \"shadow\": null, \"eta\": null, \"expires\": null, \"group\": null, \"group_index\": null, \"retries\": 0, \"timelimit\": [null, null], \"root_id\": \"f9ecc335-02d9-4c22-bd3b-9a630707ebf7\", \"parent_id\": null, \"argsrepr\": \"(10, 20)\", \"kwargsrepr\": \"{}\", \"origin\": \"gen1@e6cb564f215c\", \"ignore_result\": false}, \"properties\": {\"correlation_id\": \"f9ecc335-02d9-4c22-bd3b-9a630707ebf7\", \"reply_to\": \"a8a3f994-2846-3e24-bce4-51893a9d87d2\", \"delivery_mode\": 2, \"delivery_info\": {\"exchange\": \"\", \"routing_key\": \"celery\"}, \"priority\": 0, \"body_encoding\": \"base64\", \"delivery_tag\": \"4dce8220-1361-45db-8ebc-3e89fcef6bac\"}}, \"\", \"celery\"]"
+redis-monitor-1  | 1729379053.576885 [0 172.18.0.4:44116] "EXEC"
+redis-monitor-1  | 1729379053.577587 [0 172.18.0.4:44106] "BRPOP" "celery" "celery\x06\x163" "celery\x06\x166" "celery\x06\x169" "1"
+redis-monitor-1  | 1729379053.578313 [0 172.18.0.4:44116] "MULTI"
+redis-monitor-1  | 1729379053.578323 [0 172.18.0.4:44116] "ZREM" "unacked_index" "4dce8220-1361-45db-8ebc-3e89fcef6bac"
+redis-monitor-1  | 1729379053.578334 [0 172.18.0.4:44116] "HDEL" "unacked" "4dce8220-1361-45db-8ebc-3e89fcef6bac"
+redis-monitor-1  | 1729379053.578339 [0 172.18.0.4:44116] "EXEC"
+redis-monitor-1  | 1729379053.581382 [0 172.18.0.4:44200] "GET" "celery-task-meta-f9ecc335-02d9-4c22-bd3b-9a630707ebf7"
+redis-monitor-1  | 1729379053.581759 [0 172.18.0.4:44200] "MULTI"
+redis-monitor-1  | 1729379053.581769 [0 172.18.0.4:44200] "SETEX" "celery-task-meta-f9ecc335-02d9-4c22-bd3b-9a630707ebf7" "86400" "{\"status\": \"SUCCESS\", \"result\": 30, \"traceback\": null, \"children\": [], \"date_done\": \"2024-10-19T23:04:13.578194\", \"task_id\": \"f9ecc335-02d9-4c22-bd3b-9a630707ebf7\"}"
+redis-monitor-1  | 1729379053.581788 [0 172.18.0.4:44200] "PUBLISH" "celery-task-meta-f9ecc335-02d9-4c22-bd3b-9a630707ebf7" "{\"status\": \"SUCCESS\", \"result\": 30, \"traceback\": null, \"children\": [], \"date_done\": \"2024-10-19T23:04:13.578194\", \"task_id\": \"f9ecc335-02d9-4c22-bd3b-9a630707ebf7\"}"
+redis-monitor-1  | 1729379053.581793 [0 172.18.0.4:44200] "EXEC"
+redis-monitor-1  | 1729379054.503537 [0 172.18.0.5:44498] "GET" "celery-task-meta-f9ecc335-02d9-4c22-bd3b-9a630707ebf7"
+app-1            | Task ID: f9ecc335-02d9-4c22-bd3b-9a630707ebf7
+app-1            | タスク実行中...
+app-1            | タスク実行中...
+app-1            | 結果: 30
+redis-monitor-1  | 1729379054.503965 [0 172.18.0.5:44478] "UNSUBSCRIBE" "celery-task-meta-f9ecc335-02d9-4c22-bd3b-9a630707ebf7"
+redis-monitor-1  | 1729379054.512943 [0 172.18.0.5:44478] "UNSUBSCRIBE" "celery-task-meta-f9ecc335-02d9-4c22-bd3b-9a630707ebf7"
+redis-monitor-1  | 1729379054.636812 [0 172.18.0.4:44106] "BRPOP" "celery" "celery\x06\x163" "celery\x06\x166" "celery\x06\x169" "1"
+[Kapp-1 exited with code 0

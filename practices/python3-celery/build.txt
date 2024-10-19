@@ -1,0 +1,79 @@
+#0 building with "default" instance using docker driver
+
+#1 [worker internal] load build definition from Dockerfile
+#1 transferring dockerfile: 401B done
+#1 DONE 0.0s
+
+#2 [worker internal] load metadata for docker.io/library/python:3.10-slim
+#2 DONE 1.1s
+
+#3 [worker internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [worker 1/5] FROM docker.io/library/python:3.10-slim@sha256:eb9ca77b1a0ffbde84c1dc333beb3490a2638813cc25a339f8575668855b9ff1
+#4 DONE 0.0s
+
+#5 [worker internal] load build context
+#5 transferring context: 457B done
+#5 DONE 0.0s
+
+#6 [worker 2/5] WORKDIR /app
+#6 CACHED
+
+#7 [worker 4/5] RUN pip install --no-cache-dir -r requirements.txt
+#7 CACHED
+
+#8 [worker 3/5] COPY requirements.txt .
+#8 CACHED
+
+#9 [worker 5/5] COPY . .
+#9 CACHED
+
+#10 [worker] exporting to image
+#10 exporting layers done
+#10 writing image sha256:0c2c999584cb32d2cb8743f9bfb1d9f8bb52d15634a94dac49a06129736ceff9 done
+#10 naming to docker.io/library/python3-celery-worker done
+#10 DONE 0.0s
+
+#11 [worker] resolving provenance for metadata file
+#11 DONE 0.0s
+
+#12 [app internal] load build definition from Dockerfile
+#12 transferring dockerfile: 401B done
+#12 DONE 0.0s
+
+#2 [app internal] load metadata for docker.io/library/python:3.10-slim
+#2 DONE 1.4s
+
+#13 [app internal] load .dockerignore
+#13 transferring context: 2B done
+#13 DONE 0.0s
+
+#4 [app 1/5] FROM docker.io/library/python:3.10-slim@sha256:eb9ca77b1a0ffbde84c1dc333beb3490a2638813cc25a339f8575668855b9ff1
+#4 DONE 0.0s
+
+#14 [app internal] load build context
+#14 transferring context: 457B done
+#14 DONE 0.0s
+
+#15 [app 3/5] COPY requirements.txt .
+#15 CACHED
+
+#16 [app 4/5] RUN pip install --no-cache-dir -r requirements.txt
+#16 CACHED
+
+#6 [app 2/5] WORKDIR /app
+#6 CACHED
+
+#17 [app 5/5] COPY . .
+#17 CACHED
+
+#18 [app] exporting to image
+#18 exporting layers done
+#18 writing image sha256:e3c08e4e8eaa56419dc7b8e1876b42d1a55235f193829d230846697e76ade48b done
+#18 naming to docker.io/library/python3-celery-app done
+#18 DONE 0.0s
+
+#19 [app] resolving provenance for metadata file
+#19 DONE 0.0s
