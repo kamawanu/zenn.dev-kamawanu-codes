@@ -1,17 +1,14 @@
-version: '3'
+from huey import RedisHuey
+from huey import crontab
 
-services:
-  redis:
-    image: redis:latest
-    ports:
-      - "6379:6379"
+# Initialize Huey
+huey = RedisHuey('my_app', host='redis', port=6379)
 
-  app:
-    build: .
-    command: python your_app.py
-    volumes:
-      - .:/app
-    depends_on:
-      - redis
-    environment:
-      - REDIS_URL=redis://redis:6379/0
+@huey.task()
+def add(a, b):
+    return a + b
+
+if __name__ == "__main__":
+    # Enqueue a task
+    result = add(3, 4)
+    print(f"Task enqueued, result: {result}")
