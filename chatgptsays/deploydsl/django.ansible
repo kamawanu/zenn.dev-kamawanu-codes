@@ -1,0 +1,37 @@
+# ansible/deploy_from_workspace.yml
+- hosts: webservers
+  vars:
+    workspace_path: /var/jenkins_workspace/mydjango  # Jenkins workspace path on the CI server
+    project_root: /home/username/mydjango            # Deployment directory on the target server
+    virtualenv: /home/username/.virtualenvs/mydjango
+  tasks:
+    - name: Copy project from Jenkins workspace to target server
+      synchronize:
+        src: "{{ workspace_path }}/"
+        dest: "{{ project_root }}/"
+        delete: yes
+
+    - name: Create virtualenv if not exists
+      command: "python3 -m venv {{ virtualenv }}"
+      args:
+        creates: "{{ virtualenv }}/bin/activate"
+
+    - name: Install requirements
+      pip:
+        requirements: "{{ project_root }}/requirements.txt"
+        virtualenv: "{{ virtualenv }}"
+
+    - name: Run migrations
+      command: "{{ virtualenv }}/bin/python manage.py migrate"
+      args:
+        chdir: "{{ project_root }}"
+
+    - name: Collect static files
+      command: "{{ virtualenv }}/bin/python manage.py collectstatic --noinput"
+      args:
+        chdir: "{{ project_root }}"
+
+    - name: Restart Gunicorn
+      service:
+        name: gunicorn
+        state: restarted

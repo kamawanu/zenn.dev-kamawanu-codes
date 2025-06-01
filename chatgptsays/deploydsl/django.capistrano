@@ -1,0 +1,39 @@
+# config/deploy.rb
+lock "~> 3.17.0"
+
+set :application, "mydjango"
+set :deploy_to, "/home/username/mydjango"
+set :copy_strategy, :export
+set :deploy_via, :copy  # Uses local workspace for deployment
+set :repo_url, "git@github.com:yourname/mydjango.git"  # Reference repo; not used for copying
+
+set :branch, "master"
+set :keep_releases, 5
+
+# In Jenkins, ensure the workspace is already populated with the latest code.
+# Capistrano will create a tarball from the local copy and transfer it to the target.
+
+namespace :deploy do
+  desc "Setup Django: virtualenv, requirements, migrate, collectstatic"
+  task :setup_django do
+    on roles(:app) do
+      within release_path do
+        execute :python3, "-m venv", "venv"
+        execute "venv/bin/pip", "install -r requirements.txt"
+        execute "venv/bin/python", "manage.py migrate"
+        execute "venv/bin/python", "manage.py collectstatic --noinput"
+      end
+    end
+  end
+
+  after :updated, :setup_django
+
+  desc "Restart application"
+  task :restart do
+    on roles(:app) do
+      execute :sudo, "systemctl restart gunicorn"
+    end
+  end
+
+  after :publishing, :restart
+end
