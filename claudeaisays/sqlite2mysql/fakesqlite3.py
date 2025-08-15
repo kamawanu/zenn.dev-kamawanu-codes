@@ -12,7 +12,8 @@ class wrapcursor:
     def execute(self, sql: str, args: Union[tuple, list] = None):
         # MySQLでは?プレースホルダーを%sに変換
         mysql_sql = sql.replace('?', '%s')
-        return self.cursor.execute(mysql_sql) if not args else self.cursor.execute(mysql_sql, args)
+        self.cursor.execute(mysql_sql) if not args else self.cursor.execute(mysql_sql, args)
+        return self
     
     @property
     def lastrowid(self):
@@ -70,20 +71,11 @@ def load_db_config(db_name: str, config_file: str = "db.ini"):
 def connect(db: str, *args):
     """
     SQLite3互換のconnect関数
-    dbパラメータがファイルパスの場合はそのまま、
-    そうでなければdb.iniのセクション名として扱う
+    dbパラメータ db.iniのセクション名として扱う
     """
-    # ファイルパスかどうかをチェック（拡張子があるか、パス区切り文字があるかで判定）
-    if '.' in db or '/' in db or '\\' in db:
-        # ファイルパスの場合は従来のSQLite3として処理
-        import sqlite3
-        from . import sqlite_wrapper  # 元のSQLite3ラッパーをインポート
-        return sqlite_wrapper.wrapsqlite3api(list(args), sqlite3.connect(db, *args))
-    else:
-        # セクション名の場合はMySQL接続
-        config_params = load_db_config(db)
-        mysql_conn = mysql.connector.connect(**config_params)
-        return wrapmysqlapi(list(args), mysql_conn)
+    config_params = load_db_config(db)
+    mysql_conn = mysql.connector.connect(**config_params)
+    return wrapmysqlapi(list(args), mysql_conn)
 
 # 使用例とdb.ini設定例
 """
